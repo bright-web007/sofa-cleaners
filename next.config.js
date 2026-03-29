@@ -7,6 +7,8 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
   },
+
+  output: 'standalone',
   
   // Enable compression
   compress: true,
