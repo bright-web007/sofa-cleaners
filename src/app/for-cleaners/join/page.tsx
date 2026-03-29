@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/Input'
 import { Checkbox } from '@/components/ui/Checkbox'
 import { Textarea } from '@/components/ui/Textarea'
 import { ProgressBar } from '@/components/ui/ProgressBar'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 
 // Form schemas for each step
 const step1Schema = z.object({
@@ -160,7 +161,7 @@ export default function CleanerSignupPage() {
                   In the meantime, you can reach us on WhatsApp:
                 </p>
                 <a
-                  href="https://wa.me/447700900000"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-whatsapp text-white rounded-lg hover:bg-whatsapp/90 transition-colors"

@@ -238,14 +238,14 @@ export default function PricingPage() {
             Get Your Free Quote Today
           </h2>
           <p className="text-xl text-primary-light mb-8">
-            Compare quotes from multiple verified cleaners in your area
+            Message us once on WhatsApp and we will route you to an available cleaner quickly
           </p>
           <Button 
             onClick={() => setIsModalOpen(true)}
             variant="secondary"
             size="lg"
           >
-            Get Free Quotes
+            Start on WhatsApp
           </Button>
         </div>
       </div>

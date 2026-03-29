@@ -48,7 +48,7 @@ const team = [
   {
     name: 'James Thompson',
     role: 'Operations',
-    description: 'Focuses on cleaner quality, service routing and the standards required to keep the marketplace reliable.',
+    description: 'Focuses on cleaner quality, service routing and the standards required to keep the WhatsApp-first service fast and reliable.',
   },
   {
     name: 'Emma Williams',

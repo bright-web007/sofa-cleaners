@@ -11,7 +11,7 @@ export function Footer() {
     {
       title: 'For Customers',
       links: [
-        { href: '/find-a-cleaner', label: 'Find a Cleaner' },
+        { href: '/find-a-cleaner', label: 'Book Fast' },
         { href: '/services', label: 'Services' },
         { href: '/how-it-works', label: 'How It Works' },
         { href: '/pricing', label: 'Pricing' },
@@ -52,22 +52,26 @@ export function Footer() {
               </div>
             </Link>
             <p className="max-w-sm text-base text-slate-600">
-              Connecting UK homeowners with trusted professionals for cleaner sofas, faster booking and less friction.
+              Message-first sofa cleaning for UK homeowners who want a trusted cleaner routed quickly, without extra onboarding.
             </p>
             <Link
               href="/find-a-cleaner"
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 no-underline hover:text-amber-700"
             >
-              Browse available cleaners
+              Start on WhatsApp
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <div className="flex gap-3 pt-2">
-              {[Twitter, Instagram, Linkedin].map((Icon, index) => (
+              {[
+                { Icon: Twitter, label: 'Twitter' },
+                { Icon: Instagram, label: 'Instagram' },
+                { Icon: Linkedin, label: 'LinkedIn' },
+              ].map(({ Icon, label }) => (
                 <Link
-                  key={index}
+                  key={label}
                   href="#"
                   className="rounded-full border border-slate-200 bg-white p-2.5 text-slate-600 transition-colors hover:border-slate-300 hover:text-slate-950"
-                  aria-label="Social link"
+                  aria-label={`Follow us on ${label}`}
                 >
                   <Icon className="h-4 w-4" />
                 </Link>

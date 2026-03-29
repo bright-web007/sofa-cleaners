@@ -7,8 +7,8 @@ export function HowItWorks() {
     },
     {
       number: 2,
-      title: "Get matched immediately", 
-      description: "We connect you with available verified local cleaners in minutes"
+      title: "We route it quickly", 
+      description: "We connect your message to available verified local cleaners in minutes"
     },
     {
       number: 3,

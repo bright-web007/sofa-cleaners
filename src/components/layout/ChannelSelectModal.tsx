@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MessageCircle, Send, Phone } from 'lucide-react'
+import { MessageCircle, Send, MessagesSquare } from 'lucide-react'
 import { Modal } from '@/components/ui/Modal'
 import { Button } from '@/components/ui/Button'
 import { Textarea } from '@/components/ui/Textarea'
@@ -94,7 +94,7 @@ export function ChannelSelectModal({
       id: 'webchat',
       title: 'Web Chat',
       description: 'Chat right here on our website',
-      icon: Phone,
+      icon: MessagesSquare,
       color: 'btn-primary',
       action: () => handleChannelSelect('webchat')
     }

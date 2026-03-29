@@ -4,15 +4,13 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Menu, Sofa, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
-interface NavbarProps {
-  onGetQuoteClick?: () => void
-}
-
-export function Navbar({ onGetQuoteClick }: NavbarProps) {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +22,7 @@ export function Navbar({ onGetQuoteClick }: NavbarProps) {
   }, [])
 
   const navItems = [
-    { href: '/find-a-cleaner', label: 'Find a Cleaner' },
+    { href: '/find-a-cleaner', label: 'Book Fast' },
     { href: '/services', label: 'Services' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/for-cleaners', label: 'For Cleaners' },
@@ -69,17 +67,10 @@ export function Navbar({ onGetQuoteClick }: NavbarProps) {
               >
                 Talk to us
               </Link>
-              {onGetQuoteClick ? (
-                <Button onClick={onGetQuoteClick} className="rounded-full bg-slate-950 px-5 text-white hover:bg-slate-800">
-                  Get matched
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              ) : (
-                <Button href="/find-a-cleaner" className="rounded-full bg-slate-950 px-5 text-white hover:bg-slate-800">
-                  Get matched
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              )}
+              <Button href={whatsappHref} className="rounded-full bg-slate-950 px-5 text-white hover:bg-slate-800">
+                Open WhatsApp
+                <ArrowRight className="h-4 w-4" />
+              </Button>
             </div>
 
             <button
@@ -110,21 +101,12 @@ export function Navbar({ onGetQuoteClick }: NavbarProps) {
                   </Link>
                 ))}
                 <div className="border-t border-slate-200 pt-4">
-                  {onGetQuoteClick ? (
-                    <Button
-                      className="w-full rounded-full bg-slate-950 text-white hover:bg-slate-800"
-                      onClick={() => {
-                        setIsMobileMenuOpen(false)
-                        onGetQuoteClick?.()
-                      }}
-                    >
-                      Get matched
-                    </Button>
-                  ) : (
-                    <Button href="/find-a-cleaner" className="w-full rounded-full bg-slate-950 text-white hover:bg-slate-800">
-                      Get matched
-                    </Button>
-                  )}
+                  <Button
+                    href={whatsappHref}
+                    className="w-full rounded-full bg-slate-950 text-white hover:bg-slate-800"
+                  >
+                    Open WhatsApp
+                  </Button>
                 </div>
               </div>
             </div>

@@ -1,33 +1,32 @@
 'use client'
 
-import { useState } from 'react'
 import { ArrowRight, Clock3, MessageSquareText, ShieldCheck, Sparkles, WalletCards } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
+import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 
 const steps = [
   {
     number: '01',
     title: 'Send the enquiry',
-    description: 'Message with your postcode, sofa type, fabric and any stain notes. The first step stays intentionally short.',
+    description: 'Message with your postcode, sofa type, fabric and any stain notes. The AI asks follow-up questions when needed.',
     icon: MessageSquareText,
   },
   {
     number: '02',
     title: 'We route the request',
-    description: 'Your enquiry is matched with verified cleaners who cover the area and service type you need.',
+    description: 'We coordinate with verified cleaners behind the scenes while keeping the customer conversation in one thread.',
     icon: ShieldCheck,
   },
   {
     number: '03',
-    title: 'Review availability',
-    description: 'You confirm timing, pricing and practical details in chat rather than waiting on a generic callback.',
+    title: 'Share pictures if useful',
+    description: 'The conversation can request photos, stain details or room access notes depending on the job.',
     icon: Clock3,
   },
   {
     number: '04',
-    title: 'Book the clean',
-    description: 'Once the slot works for you, the cleaner is confirmed and arrives with the right equipment for the job.',
+    title: 'Escalate when needed',
+    description: 'If the case is unusual or sensitive, admin steps in. Otherwise the AI keeps the booking moving to confirmation.',
     icon: Sparkles,
   },
 ]
@@ -48,33 +47,22 @@ const faqs = [
 ]
 
 export default function HowItWorksPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   return (
-    <>
       <div className="homepage-mesh bg-[#f4f1ea] text-slate-900">
         <section className="border-b border-slate-200/70 bg-white">
           <div className="container py-16 sm:py-20 lg:py-24">
             <div className="mx-auto max-w-4xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-700">How It Works</p>
               <h1 className="mt-4 font-serif text-5xl leading-[0.98] tracking-[-0.04em] text-slate-950 sm:text-6xl">
-                A shorter path from enquiry to clean.
+                A conversational path from enquiry to clean.
               </h1>
               <p className="mt-6 text-lg text-slate-600 sm:text-xl">
-                The service is built to remove the usual booking drag: fewer form fields, faster routing, clearer trust
-                signals and a more direct handoff to cleaners.
+                The service is built around AI-led messaging: dynamic intake questions, picture requests when useful,
+                cleaner coordination in the background, and human escalation only when needed.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button
-                  onClick={() => setIsModalOpen(true)}
-                  size="xl"
-                  className="rounded-2xl bg-slate-950 text-white hover:bg-slate-800"
-                >
-                  Start booking
-                </Button>
-                <Button href="/services" variant="secondary" size="xl" className="rounded-2xl">
-                  View service types
-                </Button>
+                <Button href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`} size="xl" className="rounded-2xl bg-slate-950 text-white hover:bg-slate-800">Open WhatsApp</Button>
+                <Button href={`https://t.me/${TELEGRAM_BOT}`} variant="secondary" size="xl" className="rounded-2xl">Open Telegram</Button>
               </div>
             </div>
           </div>
@@ -108,18 +96,18 @@ export default function HowItWorksPage() {
             <div className="grid gap-8 lg:grid-cols-3">
               {[
                 {
-                  title: 'Verified professionals',
-                  body: 'Cleaner quality matters more than quantity. Vetting and trust are part of the product.',
+                  title: 'Dynamic intake',
+                  body: 'The conversation changes based on fabric type, stains, urgency, access and anything else the job needs.',
                   icon: ShieldCheck,
                 },
                 {
                   title: 'Faster responses',
-                  body: 'A shorter enquiry flow improves routing speed and reduces booking drop-off.',
+                  body: 'AI keeps the conversation moving immediately instead of waiting for manual triage on every lead.',
                   icon: Clock3,
                 },
                 {
-                  title: 'Clearer pricing conversations',
-                  body: 'Customers can clarify scope, stains and timing in chat before the cleaner arrives.',
+                  title: 'Admin escalation when needed',
+                  body: 'Exceptions, edge cases and sensitive jobs can be handed to a human without breaking the customer flow.',
                   icon: WalletCards,
                 },
               ].map((item) => {
@@ -165,27 +153,17 @@ export default function HowItWorksPage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Ready</p>
                 <h2 className="mt-3 font-serif text-4xl text-white sm:text-5xl">If the flow feels clearer, use it.</h2>
                 <p className="mt-4 text-lg text-slate-300">
-                  The point of the redesign is not just appearance. It is to make the next action obvious and credible.
+                  The point of the redesign is to move customers straight into a chat where the intake and coordination
+                  can happen properly.
                 </p>
               </div>
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                size="xl"
-                className="rounded-2xl bg-amber-300 text-slate-950 hover:bg-amber-200"
-              >
-                Get quotes now
+              <Button href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`} size="xl" className="rounded-2xl bg-amber-300 text-slate-950 hover:bg-amber-200">
+                Open WhatsApp
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
           </div>
         </section>
       </div>
-
-      <ChannelSelectModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        message="Hi, I'd like to get quotes for sofa cleaning."
-      />
-    </>
   )
 }

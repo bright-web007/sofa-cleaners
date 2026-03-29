@@ -7,7 +7,7 @@ export default function HomePage() {
     '@type': 'WebSite',
     name: 'SofaCleaner.org',
     description:
-      'Book verified sofa cleaning professionals in minutes through a fast WhatsApp or Telegram flow.',
+      'Start a WhatsApp or Telegram chat and let SofaCleaner AI guide the enquiry, collect photos, coordinate cleaners and escalate when needed.',
     url: 'https://sofacleaner.org',
     potentialAction: {
       '@type': 'SearchAction',
@@ -20,7 +20,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SofaCleaner.org',
-    description: 'UK platform connecting customers with professional sofa cleaners',
+    description: 'UK AI-assisted sofa cleaning service that manages the conversation between customer and cleaner from enquiry to booking',
     url: 'https://sofacleaner.org',
     logo: 'https://sofacleaner.org/logo.png',
     areaServed: {

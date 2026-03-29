@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`
   },
-  description: 'Find trusted, DBS-checked sofa cleaning professionals in your area. Professional upholstery cleaning with satisfaction guarantee.',
+  description: 'Message SofaCleaner on WhatsApp or Telegram and our AI will collect details, request photos, coordinate the cleaner, and escalate to admin when needed.',
   metadataBase: new URL(SITE_URL),
   keywords: ['sofa cleaning', 'upholstery cleaning', 'furniture cleaning', 'UK', 'professional cleaning'],
   authors: [{ name: SITE_NAME }],
@@ -49,12 +49,12 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     title: SITE_NAME,
-    description: 'Find trusted, DBS-checked sofa cleaning professionals in your area.',
+    description: 'Message SofaCleaner on WhatsApp or Telegram and let our AI guide the booking conversation from first message to cleaner coordination.',
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE_NAME,
-    description: 'Find trusted, DBS-checked sofa cleaning professionals in your area.',
+    description: 'Message SofaCleaner on WhatsApp or Telegram and let our AI guide the booking conversation from first message to cleaner coordination.',
     creator: `@${SITE_NAME.toLowerCase()}`
   },
   verification: {
@@ -74,7 +74,7 @@ export default function RootLayout({
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
-    description: 'UK platform connecting homeowners with trusted sofa cleaning professionals',
+    description: 'UK AI-assisted sofa cleaning service handling customer intake, media collection, cleaner coordination, and admin escalation when needed',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'GB'

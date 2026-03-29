@@ -12,27 +12,28 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Agreement to Terms</h2>
           <p>
-            By accessing or using SofaCleaner.org ("the Platform," "we," "us," or "our"), you ("Customer," "you," or "your") 
+            By accessing or using SofaCleaner.org ("the Service," "we," "us," or "our"), you ("Customer," "you," or "your") 
             agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, 
             you may not use our services.
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. Description of Services</h2>
           
-          <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">2.1 Platform Services</h3>
-          <p>SofaCleaner.org is an online marketplace that:</p>
+          <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">2.1 Service Model</h3>
+          <p>SofaCleaner.org is a WhatsApp-first matching service that:</p>
           <ul>
-            <li>Connects customers with independent cleaning professionals</li>
-            <li>Facilitates quote collection and comparison</li>
-            <li>Provides a communication channel between customers and cleaners</li>
-            <li>Maintains cleaner profiles, ratings, and reviews</li>
+            <li>Receives customer enquiries directly by message</li>
+            <li>Routes those enquiries to available independent cleaning professionals</li>
+            <li>Helps move booking conversations forward quickly</li>
+            <li>May provide cleaner details, availability and pricing guidance where relevant</li>
           </ul>
 
           <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">2.2 Important Disclaimer</h3>
           <p>
-            <strong>SofaCleaner.org is a marketplace platform only.</strong> We do not provide cleaning services directly. 
+            <strong>SofaCleaner.org is not a traditional marketplace directory.</strong> We do not require customer onboarding, account creation,
+            or profile browsing before a booking conversation begins. We do not provide cleaning services directly. 
             All cleaning services are performed by independent contractors who are not employees of SofaCleaner.org. 
-            We act solely as an intermediary to connect customers with service providers.
+            We act as a messaging-led intermediary to route customers to service providers quickly.
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. User Eligibility</h2>
@@ -48,11 +49,11 @@ export default function TermsPage() {
           
           <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">4.1 Quote Request Process</h3>
           <ol>
-            <li>Customer submits service request with property and contact details</li>
-            <li>We collect quotes from suitable cleaners in your area</li>
-            <li>We present quotes with cleaner profiles and ratings</li>
-            <li>Customer selects preferred cleaner and we facilitate introduction</li>
-            <li>Customer and cleaner arrange scheduling directly</li>
+            <li>Customer messages SofaCleaner with service details, postcode and timing</li>
+            <li>We route the enquiry to a suitable cleaner or shortlist of cleaners</li>
+            <li>Pricing, availability and scope are clarified in chat</li>
+            <li>Customer confirms the preferred option and timing</li>
+            <li>Customer and cleaner complete the booking arrangement</li>
           </ol>
 
           <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">4.2 Booking Confirmation</h3>

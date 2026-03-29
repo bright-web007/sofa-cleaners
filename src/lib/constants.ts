@@ -1,7 +1,7 @@
 // Site Configuration
 export const SITE_NAME = "SofaCleaner"
 export const SITE_URL = "https://sofacleaner.org"
-export const SITE_DESCRIPTION = "Find trusted, DBS-checked sofa cleaning professionals in your area. Professional upholstery cleaning with satisfaction guarantee."
+export const SITE_DESCRIPTION = "Message SofaCleaner on WhatsApp or Telegram and our AI will guide the enquiry, collect photos and details, coordinate with cleaners, and escalate to admin when needed."
 
 // Contact Information
 export const WHATSAPP_NUMBER = "447700000000"

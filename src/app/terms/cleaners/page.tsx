@@ -21,8 +21,8 @@ export default function CleanerTermsPage() {
           
           <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">2.1 Status</h3>
           <p>
-            <strong>You are an independent contractor, not an employee.</strong> SofaCleaner.org is a marketplace 
-            platform that connects you with potential customers. We do not control how, when, or where you perform 
+            <strong>You are an independent contractor, not an employee.</strong> SofaCleaner.org is a booking and routing 
+            service that sends customer enquiries to suitable cleaners. We do not control how, when, or where you perform 
             cleaning services. You maintain complete autonomy over your business operations.
           </p>
 

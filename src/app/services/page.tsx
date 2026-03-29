@@ -1,11 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Clock3, ShieldCheck, Sparkles, Star } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
 import { JsonLd } from '@/components/JsonLd'
+import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 import services from '@/lib/data/services.json'
 
 function ServiceCard({ service }: { service: (typeof services)[0] }) {
@@ -37,8 +36,6 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 }
 
 export default function ServicesPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   const servicesSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -68,20 +65,12 @@ export default function ServicesPage() {
                 Sofa cleaning services designed for real booking intent.
               </h1>
               <p className="mt-6 text-lg text-slate-600 sm:text-xl">
-                From fabric refresh to stain rescue and tenancy turnaround, each service page is now easier to scan,
-                easier to trust and closer to the booking moment.
+                From fabric refresh to stain rescue and tenancy turnaround, the service pages now support a
+                conversational intake flow rather than a directory-style buying flow.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button
-                  onClick={() => setIsModalOpen(true)}
-                  size="xl"
-                  className="rounded-2xl bg-slate-950 text-white hover:bg-slate-800"
-                >
-                  Get matched now
-                </Button>
-                <Button href="/how-it-works" variant="secondary" size="xl" className="rounded-2xl">
-                  How booking works
-                </Button>
+                <Button href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`} size="xl" className="rounded-2xl bg-slate-950 text-white hover:bg-slate-800">Open WhatsApp</Button>
+                <Button href={`https://t.me/${TELEGRAM_BOT}`} variant="secondary" size="xl" className="rounded-2xl">Open Telegram</Button>
               </div>
             </div>
           </div>
@@ -101,17 +90,17 @@ export default function ServicesPage() {
               {[
                 {
                   title: 'Specialist routing',
-                  body: 'Different fabrics and stain types need different cleaners. The matching flow reflects that.',
+                  body: 'Different fabrics and stain types trigger different questions, media requests and cleaner routing logic.',
                   icon: ShieldCheck,
                 },
                 {
                   title: 'Faster turnaround',
-                  body: 'The service is structured for same-day and urgent enquiries where cleaner availability allows.',
+                  body: 'The AI can gather the basics immediately and keep both sides moving while admins step in only when required.',
                   icon: Clock3,
                 },
                 {
                   title: 'Higher clarity',
-                  body: 'Pricing, scope and expectations can be clarified in chat before the visit happens.',
+                  body: 'Scope, stains, access notes and pictures can all be handled inside the chat before the visit happens.',
                   icon: Sparkles,
                 },
               ].map((item) => {
@@ -140,27 +129,17 @@ export default function ServicesPage() {
                 </div>
                 <h2 className="mt-5 font-serif text-4xl text-slate-950 sm:text-5xl">Pick a service or start the chat.</h2>
                 <p className="mt-4 text-lg text-slate-600">
-                  Either route works. The page is now built to support both browsing and immediate conversion.
+                  If you already know the job type, use the service page. If not, just open the chat and we will guide the intake.
                 </p>
               </div>
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                size="xl"
-                className="rounded-2xl bg-amber-300 text-slate-950 hover:bg-amber-200"
-              >
-                Request a quote
+              <Button href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`} size="xl" className="rounded-2xl bg-amber-300 text-slate-950 hover:bg-amber-200">
+                Open WhatsApp
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
           </div>
         </section>
       </div>
-
-      <ChannelSelectModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        message="Hi, I'd like a quote for sofa cleaning services."
-      />
 
       <JsonLd data={servicesSchema} />
     </>

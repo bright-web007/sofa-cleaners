@@ -1,11 +1,12 @@
 # SofaCleaner.org
 
-A comprehensive marketplace platform connecting customers with professional sofa and upholstery cleaning services across the UK.
+A WhatsApp-first sofa cleaning service that routes customers to available cleaners quickly, without onboarding or account setup.
 
 ## 🚀 Features
 
-- **Location-Based Search**: Find cleaners in your specific area with detailed coverage maps
-- **Service Comparison**: Compare prices, services, and customer reviews
+- **WhatsApp-First Booking**: Customers message once and get routed to a cleaner quickly
+- **No Onboarding**: No account creation, login, or long quote forms required for customers
+- **Fast Routing Flow**: Built to turn urgent sofa cleaning requests into live booking conversations
 - **Multiple Contact Channels**: WhatsApp, Telegram, phone, and web chat integration
 - **Responsive Design**: Mobile-first approach for optimal user experience
 - **SEO Optimized**: Full technical SEO implementation with structured data
@@ -52,7 +53,7 @@ src/
 ## 📊 Data Structure
 
 ### Core Entities
-- **Cleaners**: Service providers with ratings, coverage, and pricing
+- **Cleaners**: Service providers with coverage, pricing, and availability data
 - **Reviews**: Customer feedback with ratings and detailed comments
 - **Cities**: UK locations with areas and postal codes
 - **Services**: Different cleaning services with descriptions and FAQs
@@ -178,4 +179,4 @@ For support and questions:
 
 ---
 
-Built with ❤️ for connecting customers with quality cleaning services.
+Built for fast sofa cleaning enquiries and quick cleaner routing.

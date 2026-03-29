@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -14,7 +14,6 @@ import {
   Star,
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
 import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 
 const metrics = [
@@ -24,25 +23,25 @@ const metrics = [
 ]
 
 const highlights = [
-  'Same-day availability in major UK cities',
-  'WhatsApp or Telegram booking in one conversation',
-  'Fabric, leather, velvet, stain and tenancy-ready cleaning',
+  'AI-led intake that adapts to the cleaning job',
+  'Photo and stain review handled in chat',
+  'Human admin escalation only when needed',
 ]
 
 const processSteps = [
   {
     title: 'Tell us what needs cleaning',
-    copy: 'Share your postcode, fabric type and urgency. The enquiry is short by design.',
+    copy: 'Share your postcode, fabric type, urgency and photos if needed. The AI asks follow-up questions based on the job.',
     icon: MessageSquareText,
   },
   {
-    title: 'We match you with a verified cleaner',
-    copy: 'We route the request to nearby professionals with the right equipment and availability.',
+    title: 'We coordinate the right cleaner',
+    copy: 'We manage the back-and-forth with cleaners, compare availability and keep the conversation moving.',
     icon: ShieldCheck,
   },
   {
-    title: 'Book the slot that works',
-    copy: 'Confirm timing, price and any stain notes in chat, then your cleaner is on the way.',
+    title: 'Escalate when needed',
+    copy: 'If the job needs human review, an admin steps in. Otherwise the AI keeps the booking moving in chat.',
     icon: Clock3,
   },
 ]
@@ -157,8 +156,7 @@ function SofaIllustration() {
 }
 
 export function HomePageDesign() {
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
-  const [postcode, setPostcode] = React.useState('')
+  const [postcode, setPostcode] = useState('')
 
   const whatsappMessage = encodeURIComponent(
     postcode
@@ -167,8 +165,7 @@ export function HomePageDesign() {
   )
 
   return (
-    <>
-      <div className="homepage-mesh relative overflow-hidden bg-[#f4f1ea] text-slate-900">
+    <div className="homepage-mesh relative overflow-hidden bg-[#f4f1ea] text-slate-900">
         <section className="relative isolate overflow-hidden border-b border-slate-200/70 bg-[#0f172a] text-white">
           <div className="homepage-grid absolute inset-0 opacity-30" />
           <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(246,211,101,0.28),transparent_55%)]" />
@@ -185,8 +182,9 @@ export function HomePageDesign() {
                     A cleaner, faster way to book sofa cleaning.
                   </h1>
                   <p className="max-w-2xl text-lg text-slate-300 sm:text-xl">
-                    SofaCleaner connects homeowners with trusted upholstery specialists through one fast conversation.
-                    No bulky forms. No waiting for callbacks. Just a premium, same-day-ready booking flow.
+                    SofaCleaner runs the whole booking conversation in chat. Our AI collects the right details,
+                    requests pictures when useful, coordinates with cleaners, and escalates to admin when the case
+                    needs a human hand.
                   </p>
                 </div>
 
@@ -203,11 +201,11 @@ export function HomePageDesign() {
                   </label>
                   <div className="flex flex-col gap-3 sm:justify-end">
                     <Button
-                      onClick={() => setIsModalOpen(true)}
+                      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
                       size="xl"
                       className="rounded-2xl bg-amber-300 px-8 py-4 text-slate-950 hover:bg-amber-200"
                     >
-                      Get matched now
+                      Open WhatsApp
                     </Button>
                   </div>
                 </div>
@@ -271,11 +269,11 @@ export function HomePageDesign() {
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-700">Why it feels better</p>
               <h2 className="max-w-xl font-serif text-4xl text-slate-950 sm:text-5xl">
-                Built like a concierge service, not a cluttered directory.
+                Built for conversational booking, not directories or forms.
               </h2>
               <p className="max-w-xl text-lg text-slate-600">
-                The redesign shifts the brand from generic lead-gen into a tighter premium service: calmer palette,
-                stronger hierarchy, quicker trust signals, and fewer dead-end blocks.
+                One chat thread handles intake, follow-up questions, pictures, cleaner coordination and exceptions.
+                The customer does not need to navigate a marketplace or wait for a callback.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -292,7 +290,7 @@ export function HomePageDesign() {
               ))}
               <div className="rounded-[1.75rem] bg-slate-950 p-6 text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
                 <p className="text-sm uppercase tracking-[0.2em] text-white/60">Customer promise</p>
-                <p className="mt-3 text-2xl font-semibold">Professional cleaner matching with less friction.</p>
+                <p className="mt-3 text-2xl font-semibold">AI-managed messaging from first enquiry to booked cleaner.</p>
                 <p className="mt-3 text-sm text-slate-300">
                   Designed for urgent spills, regular maintenance and end-of-tenancy turnaround.
                 </p>
@@ -309,8 +307,7 @@ export function HomePageDesign() {
                 <h2 className="mt-3 font-serif text-4xl text-slate-950 sm:text-5xl">Three steps, zero clutter.</h2>
               </div>
               <p className="max-w-xl text-slate-600">
-                Each section is doing a clearer job: the hero drives action, proof is immediate, and the process
-                removes ambiguity.
+                From your first message to a confirmed cleaner, the entire booking flow takes minutes — not hours.
               </p>
             </div>
 
@@ -357,9 +354,10 @@ export function HomePageDesign() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {serviceCards.map((service) => (
-              <div
+              <Link
                 key={service.title}
-                className="group rounded-[1.75rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                href="/services"
+                className="group cursor-pointer rounded-[1.75rem] border border-slate-200 bg-white p-6 no-underline transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
               >
                 <div className="inline-flex rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-amber-800">
                   Upholstery
@@ -370,7 +368,7 @@ export function HomePageDesign() {
                   Learn more
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -382,16 +380,17 @@ export function HomePageDesign() {
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Coverage</p>
                 <h2 className="font-serif text-4xl text-white sm:text-5xl">Available across the UK’s busiest cities.</h2>
                 <p className="max-w-xl text-lg text-slate-300">
-                  The design now treats location coverage as proof, not filler. High-intent visitors can immediately
-                  see that the service is broad, active and local.
+                  Our verified cleaner network covers the UK's major cities, ready to respond when you need them most.
+                  Same-day availability in most areas.
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {coverage.map((city) => (
-                  <div
+                  <Link
                     key={city}
-                    className="rounded-[1.5rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur"
+                    href={`/find-a-cleaner?city=${city.toLowerCase()}`}
+                    className="rounded-[1.5rem] border border-white/10 bg-white/5 px-5 py-4 no-underline backdrop-blur transition duration-200 hover:border-white/20 hover:bg-white/10"
                   >
                     <div className="flex items-center gap-3">
                       <div className="rounded-full bg-white/10 p-2">
@@ -399,7 +398,7 @@ export function HomePageDesign() {
                       </div>
                       <span className="text-lg font-medium text-white">{city}</span>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -468,43 +467,34 @@ export function HomePageDesign() {
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Ready to book</p>
                 <h2 className="mt-3 font-serif text-4xl text-white sm:text-5xl">
-                  Turn the homepage into a sharper sales surface.
+                  Your freshest sofa is one conversation away.
                 </h2>
                 <p className="mt-4 max-w-xl text-lg text-slate-300">
-                  The redesign prioritises speed, credibility and clarity. Visitors get a much cleaner path from first
-                  impression to booking.
+                  Start the chat, answer the prompts, send photos if needed, and let us handle the cleaner side of the
+                  conversation for you.
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button
-                  onClick={() => setIsModalOpen(true)}
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
                   size="xl"
                   className="rounded-2xl bg-amber-300 text-slate-950 hover:bg-amber-200"
                 >
-                  Start booking
+                  Open WhatsApp
                 </Button>
                 <Button
-                  href="/find-a-cleaner"
+                  href={`https://t.me/${TELEGRAM_BOT}`}
                   variant="ghost"
                   size="xl"
                   className="rounded-2xl border border-white/15 bg-white/[0.06] text-white hover:bg-white/[0.12] hover:text-white"
                 >
-                  Browse cleaners
+                  Open Telegram
                 </Button>
               </div>
             </div>
           </div>
         </section>
-      </div>
-
-      <ChannelSelectModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        prefilledMessage={
-          postcode ? `Hi, I'd like to book a sofa cleaner in ${postcode}.` : "Hi, I'd like to book a sofa cleaner."
-        }
-      />
-    </>
+    </div>
   )
 }

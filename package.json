@@ -2,13 +2,13 @@
   "name": "sofacleaner",
   "version": "1.0.0",
   "private": true,
-  "description": "A comprehensive marketplace platform connecting customers with professional sofa and upholstery cleaning services across the UK.",
+  "description": "A WhatsApp-first sofa cleaning service that routes customers to available cleaners quickly, without onboarding or account setup.",
   "author": "SofaCleaner.org Team",
   "license": "MIT",
   "keywords": [
     "sofa cleaning",
     "upholstery cleaning",
-    "marketplace",
+    "whatsapp-booking",
     "nextjs",
     "typescript",
     "tailwindcss"
