@@ -1,0 +1,162 @@
+[
+  {
+    "id": "fabric-sofa-cleaning",
+    "name": "Fabric Sofa Cleaning",
+    "slug": "fabric-sofa-cleaning", 
+    "headline": "Professional Fabric Sofa Cleaning Service - Deep Clean & Sanitize",
+    "description": "Expert fabric sofa cleaning using industry-leading techniques to remove stains, odors, and deep-seated dirt. Safe for all fabric types with eco-friendly products.",
+    "whyPro": "Professional fabric sofa cleaning requires specialized knowledge of different fabric types, pH-balanced cleaning solutions, and proper drying techniques. Our trained cleaners use hot water extraction and low-moisture methods to ensure your sofa is thoroughly cleaned without damage. We can treat delicate fabrics like linen, cotton, polyester, and blends that DIY methods might ruin.",
+    "whatToExpect": "Our technician will arrive with professional equipment including a powerful extraction machine, pH-balanced cleaning solutions, and fabric protectors. We'll pre-treat stains, deep clean with hot water extraction, apply fabric protection if requested, and ensure proper drying. The process typically takes 2-4 hours depending on sofa size and soil level.",
+    "priceRange": "£80-180 depending on sofa size and condition",
+    "faqs": [
+      {
+        "question": "How long does fabric sofa cleaning take?",
+        "answer": "Typically 2-4 hours depending on the size and condition of your sofa. We'll provide an accurate timeframe after assessment."
+      },
+      {
+        "question": "Will my sofa be wet after cleaning?",
+        "answer": "It will be damp but not soaking. Our low-moisture extraction method leaves minimal water. Drying time is usually 4-6 hours with proper ventilation."
+      },
+      {
+        "question": "Can you remove all stains from fabric sofas?",
+        "answer": "We can remove most stains including food, drinks, and pet accidents. However, some permanent stains like bleach damage or old set-in stains may not be fully removable."
+      },
+      {
+        "question": "Is fabric sofa cleaning safe for children and pets?",
+        "answer": "Yes, we use eco-friendly, non-toxic cleaning solutions that are safe for your family and pets once dried."
+      },
+      {
+        "question": "How often should I have my fabric sofa professionally cleaned?",
+        "answer": "We recommend professional cleaning every 12-18 months for regular use, or every 6-12 months for heavily used sofas or homes with pets."
+      }
+    ]
+  },
+  {
+    "id": "leather-sofa-cleaning",
+    "name": "Leather Sofa Cleaning",
+    "slug": "leather-sofa-cleaning",
+    "headline": "Expert Leather Sofa Cleaning & Conditioning Service",
+    "description": "Specialized leather sofa cleaning and conditioning to restore, protect, and extend the life of your leather furniture. Safe for all leather types.",
+    "whyPro": "Leather requires expert care using specific pH-balanced cleaners and conditioners. Using the wrong products can crack, discolor, or damage leather permanently. Our leather specialists understand different leather types (aniline, semi-aniline, pigmented) and use appropriate techniques for each. We also provide conditioning to keep leather supple and protected.",
+    "whatToExpect": "Our leather specialist will assess your sofa's leather type and condition, then use specialized leather cleaners to remove dirt and oils. We'll apply premium leather conditioner to restore suppleness and protect against cracking. For severely soiled leather, we may use gentle steam cleaning. The process includes scratch assessment and minor repair if possible.",
+    "priceRange": "£90-220 depending on leather type and sofa size",
+    "faqs": [
+      {
+        "question": "Can you clean all types of leather sofas?",
+        "answer": "Yes, we clean aniline, semi-aniline, pigmented, and nubuck leather. Each type requires different techniques and products which our specialists are trained in."
+      },
+      {
+        "question": "Will leather cleaning remove scratches?",
+        "answer": "Minor surface scratches can often be improved with conditioning and buffing. Deep scratches may require professional leather repair services."
+      },
+      {
+        "question": "How long does leather conditioning last?",
+        "answer": "Professional conditioning typically lasts 6-12 months depending on usage and environmental conditions. We recommend annual conditioning for most leather furniture."
+      },
+      {
+        "question": "Can you match the original leather color?",
+        "answer": "We can restore faded leather closer to its original color, but exact matching depends on the leather type and degree of aging."
+      },
+      {
+        "question": "Is leather cleaning messy?",
+        "answer": "No, our process is clean and controlled. We protect surrounding area and clean up any residue. Your home will be left spotless."
+      }
+    ]
+  },
+  {
+    "id": "stain-removal",
+    "name": "Professional Stain Removal",
+    "slug": "stain-removal",
+    "headline": "Expert Stain Removal Service for All Upholstery Types",
+    "description": "Specialized stain removal service for tough, set-in stains on sofas and upholstery. We tackle wine, coffee, food, pet, and mystery stains with professional techniques.",
+    "whyPro": "Different stains require different removal techniques and solutions. Professional stain removal involves identifying the stain type, selecting appropriate chemicals, and using proper technique to avoid spreading or setting the stain permanently. Our technicians are trained in protein stains, tannin stains, oil-based stains, and combination stains that require multiple treatment approaches.",
+    "whatToExpect": "Our stain specialist will identify the stain type and test cleaning solutions in an inconspicuous area. We'll apply targeted pre-treatment, use specialized extraction techniques, and may require multiple applications for stubborn stains. We finish with fabric protection to prevent future staining. Some stains may require overnight treatment time.",
+    "priceRange": "£40-120 per stain depending on size and difficulty",
+    "faqs": [
+      {
+        "question": "Can you guarantee stain removal?",
+        "answer": "While we remove most stains successfully, we cannot guarantee 100% removal of all stains. Some stains may be permanent due to age, heat damage, or chemical alteration of the fabric."
+      },
+      {
+        "question": "What types of stains do you specialize in?",
+        "answer": "We handle wine, coffee, food stains, pet urine, blood, makeup, ink, grease, and most other common household stains using targeted removal techniques."
+      },
+      {
+        "question": "How quickly should I call for stain treatment?",
+        "answer": "The sooner the better! Fresh stains are much easier to remove. However, we can often improve even old, set-in stains with professional techniques."
+      },
+      {
+        "question": "Will stain removal damage my fabric?",
+        "answer": "Our trained technicians test all products in hidden areas first and use pH-balanced, fabric-safe solutions. We prioritize fabric preservation while maximizing stain removal."
+      },
+      {
+        "question": "Do you offer emergency stain removal?",
+        "answer": "Yes, we provide same-day or next-day service for urgent stain situations. Quick response significantly improves removal success rates."
+      }
+    ]
+  },
+  {
+    "id": "velvet-sofa-cleaning",
+    "name": "Velvet Sofa Cleaning",
+    "slug": "velvet-sofa-cleaning",
+    "headline": "Specialized Velvet Upholstery Cleaning Service",
+    "description": "Expert velvet sofa cleaning using gentle, specialized techniques to preserve the luxurious texture and appearance of velvet upholstery without crushing or damaging the pile.",
+    "whyPro": "Velvet is one of the most delicate upholstery fabrics, requiring specialized knowledge and techniques. Incorrect cleaning can permanently crush the pile, cause water marks, or alter the fabric's luxurious texture. Our velvet specialists use low-moisture methods, specialized brushes, and fabric-specific solutions to maintain the velvet's distinctive feel and appearance.",
+    "whatToExpect": "Our velvet specialist will assess the fabric type (cotton velvet, silk velvet, or synthetic velvet) and use appropriate low-moisture cleaning techniques. We employ specialized velvet brushes to maintain pile direction, use minimal water extraction, and finish with professional steaming to restore the fabric's natural luster and texture.",
+    "priceRange": "£120-280 depending on velvet type and sofa size",
+    "faqs": [
+      {
+        "question": "Can all types of velvet be cleaned?",
+        "answer": "We clean cotton velvet, silk velvet, and synthetic velvets. Each requires different approaches - silk velvet needs the most delicate treatment."
+      },
+      {
+        "question": "Will cleaning flatten the velvet pile?",
+        "answer": "Our specialized techniques and tools are designed to preserve pile direction and texture. We use professional velvet brushes and controlled moisture levels to maintain the luxurious feel."
+      },
+      {
+        "question": "How do you prevent water marks on velvet?",
+        "answer": "We use low-moisture cleaning methods and controlled drying techniques to prevent the water marks that commonly occur with velvet. Proper airflow and temperature control are essential."
+      },
+      {
+        "question": "Is velvet cleaning more expensive than other fabrics?",
+        "answer": "Yes, velvet requires specialized equipment, techniques, and more time, making it more costly than standard fabric cleaning. However, professional cleaning preserves these valuable pieces."
+      },
+      {
+        "question": "Can you restore flattened velvet areas?",
+        "answer": "We can often improve flattened areas using steam treatment and specialized brushing techniques, though results depend on how long the area has been compressed."
+      }
+    ]
+  },
+  {
+    "id": "end-of-tenancy",
+    "name": "End of Tenancy Sofa Cleaning",
+    "slug": "end-of-tenancy",
+    "headline": "Professional End of Tenancy Cleaning - Get Your Deposit Back",
+    "description": "Comprehensive end-of-tenancy cleaning service for all upholstered furniture. Deep cleaning that meets landlord and letting agency standards to help secure your full deposit return.",
+    "whyPro": "End-of-tenancy cleaning requires meeting strict standards set by landlords and letting agencies. Professional cleaning provides documented proof of proper maintenance and typically ensures deposit return. Our comprehensive service covers all aspects of upholstery cleaning to rental property standards, including odor elimination and stain removal that DIY methods cannot achieve.",
+    "whatToExpect": "We'll perform a complete cleaning service including pre-inspection documentation, deep cleaning of all upholstered items, stain removal, odor treatment, and sanitization. We provide before/after photos and a completion certificate for your landlord. The service includes steam cleaning, extraction, and professional finishing to meet tenancy agreement requirements.",
+    "priceRange": "£150-400 depending on property size and furniture quantity", 
+    "faqs": [
+      {
+        "question": "Will end-of-tenancy cleaning guarantee my deposit back?",
+        "answer": "While we cannot guarantee deposit return (as this depends on multiple factors), our professional cleaning meets industry standards and significantly improves your chances of full deposit recovery."
+      },
+      {
+        "question": "Do you provide documentation for landlords?",
+        "answer": "Yes, we provide before/after photos, a detailed cleaning report, and a completion certificate that you can submit to your landlord or letting agency as proof of professional cleaning."
+      },
+      {
+        "question": "How far in advance should I book end-of-tenancy cleaning?",
+        "answer": "We recommend booking 1-2 weeks before your move-out date. However, we do offer urgent services if you need cleaning within 24-48 hours of tenancy end."
+      },
+      {
+        "question": "What if the landlord isn't satisfied after cleaning?",
+        "answer": "We offer a satisfaction guarantee - if legitimate cleaning issues are raised within 72 hours, we'll return to address them at no extra charge."
+      },
+      {
+        "question": "Do you clean other items besides sofas for end-of-tenancy?",
+        "answer": "This service focuses on upholstered furniture, but we can coordinate with other cleaning services for a complete end-of-tenancy package including carpets and general cleaning."
+      }
+    ]
+  }
+]

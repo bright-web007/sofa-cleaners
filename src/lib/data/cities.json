@@ -1,0 +1,365 @@
+[
+  {
+    "id": "london",
+    "name": "London",
+    "slug": "london",
+    "areas": [
+      { "name": "Kensington", "slug": "kensington" },
+      { "name": "Chelsea", "slug": "chelsea" },
+      { "name": "Camden", "slug": "camden" },
+      { "name": "Islington", "slug": "islington" },
+      { "name": "Greenwich", "slug": "greenwich" },
+      { "name": "Westminster", "slug": "westminster" },
+      { "name": "Hackney", "slug": "hackney" },
+      { "name": "Southwark", "slug": "southwark" }
+    ],
+    "cleanerCount": 28,
+    "completedJobs": 4321,
+    "avgPrice": 55
+  },
+  {
+    "id": "manchester",
+    "name": "Manchester",
+    "slug": "manchester",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Didsbury", "slug": "didsbury" },
+      { "name": "Chorlton", "slug": "chorlton" },
+      { "name": "Salford", "slug": "salford" },
+      { "name": "Trafford", "slug": "trafford" },
+      { "name": "Sale", "slug": "sale" }
+    ],
+    "cleanerCount": 15,
+    "completedJobs": 2156,
+    "avgPrice": 42
+  },
+  {
+    "id": "birmingham",
+    "name": "Birmingham", 
+    "slug": "birmingham",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Edgbaston", "slug": "edgbaston" },
+      { "name": "Moseley", "slug": "moseley" },
+      { "name": "Kings Heath", "slug": "kings-heath" },
+      { "name": "Solihull", "slug": "solihull" },
+      { "name": "Sutton Coldfield", "slug": "sutton-coldfield" }
+    ],
+    "cleanerCount": 12,
+    "completedJobs": 1847,
+    "avgPrice": 43
+  },
+  {
+    "id": "leeds", 
+    "name": "Leeds",
+    "slug": "leeds",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Headingley", "slug": "headingley" },
+      { "name": "Chapel Allerton", "slug": "chapel-allerton" },
+      { "name": "Roundhay", "slug": "roundhay" },
+      { "name": "Kirkstall", "slug": "kirkstall" }
+    ],
+    "cleanerCount": 8,
+    "completedJobs": 983,
+    "avgPrice": 44
+  },
+  {
+    "id": "bristol",
+    "name": "Bristol",
+    "slug": "bristol", 
+    "areas": [
+      { "name": "Clifton", "slug": "clifton" },
+      { "name": "Redland", "slug": "redland" },
+      { "name": "Cotham", "slug": "cotham" },
+      { "name": "Bishopston", "slug": "bishopston" },
+      { "name": "Montpelier", "slug": "montpelier" }
+    ],
+    "cleanerCount": 6,
+    "completedJobs": 754,
+    "avgPrice": 46
+  },
+  {
+    "id": "edinburgh",
+    "name": "Edinburgh",
+    "slug": "edinburgh",
+    "areas": [
+      { "name": "New Town", "slug": "new-town" },
+      { "name": "Old Town", "slug": "old-town" },
+      { "name": "Stockbridge", "slug": "stockbridge" },
+      { "name": "Morningside", "slug": "morningside" },
+      { "name": "Leith", "slug": "leith" }
+    ],
+    "cleanerCount": 7,
+    "completedJobs": 892,
+    "avgPrice": 48
+  },
+  {
+    "id": "glasgow",
+    "name": "Glasgow",
+    "slug": "glasgow",
+    "areas": [
+      { "name": "West End", "slug": "west-end" },
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Southside", "slug": "southside" },
+      { "name": "East End", "slug": "east-end" }
+    ],
+    "cleanerCount": 5,
+    "completedJobs": 612,
+    "avgPrice": 41
+  },
+  {
+    "id": "liverpool",
+    "name": "Liverpool", 
+    "slug": "liverpool",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Albert Dock", "slug": "albert-dock" },
+      { "name": "Cavern Quarter", "slug": "cavern-quarter" },
+      { "name": "Baltic Triangle", "slug": "baltic-triangle" },
+      { "name": "Georgian Quarter", "slug": "georgian-quarter" }
+    ],
+    "cleanerCount": 4,
+    "completedJobs": 487,
+    "avgPrice": 39
+  },
+  {
+    "id": "sheffield",
+    "name": "Sheffield",
+    "slug": "sheffield",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Ecclesall", "slug": "ecclesall" },
+      { "name": "Crookes", "slug": "crookes" },
+      { "name": "Broomhill", "slug": "broomhill" }
+    ],
+    "cleanerCount": 3,
+    "completedJobs": 321,
+    "avgPrice": 38
+  },
+  {
+    "id": "nottingham",
+    "name": "Nottingham",
+    "slug": "nottingham",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Lace Market", "slug": "lace-market" },
+      { "name": "West Bridgford", "slug": "west-bridgford" },
+      { "name": "Beeston", "slug": "beeston" }
+    ],
+    "cleanerCount": 4,
+    "completedJobs": 428,
+    "avgPrice": 40
+  },
+  {
+    "id": "cardiff",
+    "name": "Cardiff",
+    "slug": "cardiff",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Cardiff Bay", "slug": "cardiff-bay" },
+      { "name": "Pontcanna", "slug": "pontcanna" },
+      { "name": "Roath", "slug": "roath" }
+    ],
+    "cleanerCount": 3,
+    "completedJobs": 295,
+    "avgPrice": 41
+  },
+  {
+    "id": "leicester",
+    "name": "Leicester",
+    "slug": "leicester", 
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Cultural Quarter", "slug": "cultural-quarter" },
+      { "name": "West End", "slug": "west-end" },
+      { "name": "Clarendon Park", "slug": "clarendon-park" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 184,
+    "avgPrice": 37
+  },
+  {
+    "id": "coventry",
+    "name": "Coventry",
+    "slug": "coventry",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Earlsdon", "slug": "earlsdon" },
+      { "name": "Canley", "slug": "canley" },
+      { "name": "Cheylesmore", "slug": "cheylesmore" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 156,
+    "avgPrice": 36
+  },
+  {
+    "id": "brighton",
+    "name": "Brighton",
+    "slug": "brighton",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "The Lanes", "slug": "the-lanes" },
+      { "name": "North Laine", "slug": "north-laine" },
+      { "name": "Hove", "slug": "hove" },
+      { "name": "Kemptown", "slug": "kemptown" }
+    ],
+    "cleanerCount": 5,
+    "completedJobs": 623,
+    "avgPrice": 49
+  },
+  {
+    "id": "oxford",
+    "name": "Oxford",
+    "slug": "oxford",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Jericho", "slug": "jericho" },
+      { "name": "Summertown", "slug": "summertown" },
+      { "name": "Headington", "slug": "headington" }
+    ],
+    "cleanerCount": 3,
+    "completedJobs": 367,
+    "avgPrice": 52
+  },
+  {
+    "id": "cambridge",
+    "name": "Cambridge",
+    "slug": "cambridge", 
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Mill Road", "slug": "mill-road" },
+      { "name": "Newnham", "slug": "newnham" },
+      { "name": "Cherry Hinton", "slug": "cherry-hinton" }
+    ],
+    "cleanerCount": 3,
+    "completedJobs": 284,
+    "avgPrice": 51
+  },
+  {
+    "id": "bath",
+    "name": "Bath",
+    "slug": "bath",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Bathwick", "slug": "bathwick" },
+      { "name": "Bear Flat", "slug": "bear-flat" },
+      { "name": "Lansdown", "slug": "lansdown" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 198,
+    "avgPrice": 53
+  },
+  {
+    "id": "york",
+    "name": "York",
+    "slug": "york",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Clifton", "slug": "clifton" },
+      { "name": "Fulford", "slug": "fulford" },
+      { "name": "Bishopthorpe", "slug": "bishopthorpe" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 176,
+    "avgPrice": 45
+  },
+  {
+    "id": "newcastle",
+    "name": "Newcastle",
+    "slug": "newcastle",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Gosforth", "slug": "gosforth" },
+      { "name": "Jesmond", "slug": "jesmond" },
+      { "name": "Heaton", "slug": "heaton" }
+    ],
+    "cleanerCount": 3,
+    "completedJobs": 287,
+    "avgPrice": 40
+  },
+  {
+    "id": "southampton",
+    "name": "Southampton",
+    "slug": "southampton",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Ocean Village", "slug": "ocean-village" },
+      { "name": "Portswood", "slug": "portswood" },
+      { "name": "Shirley", "slug": "shirley" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 193,
+    "avgPrice": 44
+  },
+  {
+    "id": "portsmouth",
+    "name": "Portsmouth",
+    "slug": "portsmouth",
+    "areas": [
+      { "name": "Old Portsmouth", "slug": "old-portsmouth" },
+      { "name": "Southsea", "slug": "southsea" },
+      { "name": "Gunwharf", "slug": "gunwharf" },
+      { "name": "Fratton", "slug": "fratton" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 167,
+    "avgPrice": 43
+  },
+  {
+    "id": "norwich",
+    "name": "Norwich",
+    "slug": "norwich",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "Norwich Lanes", "slug": "norwich-lanes" },
+      { "name": "Golden Triangle", "slug": "golden-triangle" },
+      { "name": "Unthank Road", "slug": "unthank-road" }
+    ],
+    "cleanerCount": 2,
+    "completedJobs": 148,
+    "avgPrice": 42
+  },
+  {
+    "id": "exeter",
+    "name": "Exeter",
+    "slug": "exeter",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "St Davids", "slug": "st-davids" },
+      { "name": "Heavitree", "slug": "heavitree" },
+      { "name": "St Thomas", "slug": "st-thomas" }
+    ],
+    "cleanerCount": 1,
+    "completedJobs": 89,
+    "avgPrice": 41
+  },
+  {
+    "id": "plymouth",
+    "name": "Plymouth",
+    "slug": "plymouth",
+    "areas": [
+      { "name": "City Centre", "slug": "city-centre" },
+      { "name": "The Barbican", "slug": "the-barbican" },
+      { "name": "Mutley", "slug": "mutley" },
+      { "name": "Stonehouse", "slug": "stonehouse" }
+    ],
+    "cleanerCount": 1,
+    "completedJobs": 72,
+    "avgPrice": 39
+  },
+  {
+    "id": "reading",
+    "name": "Reading",
+    "slug": "reading",
+    "areas": [
+      { "name": "Town Centre", "slug": "town-centre" },
+      { "name": "Caversham", "slug": "caversham" },
+      { "name": "Tilehurst", "slug": "tilehurst" },
+      { "name": "Earley", "slug": "earley" }
+    ],
+    "cleanerCount": 3,
+    "completedJobs": 234,
+    "avgPrice": 47
+  }
+]

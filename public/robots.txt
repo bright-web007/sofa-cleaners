@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block sensitive areas
+Disallow: /cleaner-dashboard/
+Disallow: /cleaner/login
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /find-cleaner
+Allow: /services
+Allow: /blog
+
+Sitemap: https://sofacleaner.org/sitemap.xml

@@ -1,0 +1,272 @@
+[
+  {
+    "id": "review-001",
+    "cleanerId": "cleaner-001",
+    "customerName": "James Hamilton",
+    "customerCity": "London",
+    "rating": 5,
+    "body": "Sarah did an absolutely brilliant job on our designer sofa. The stains from our toddler's juice spills vanished completely. Professional, punctual, and reasonably priced considering the quality of work.",
+    "date": "2026-03-20"
+  },
+  {
+    "id": "review-002",
+    "cleanerId": "cleaner-001",
+    "customerName": "Charlotte Webb",
+    "customerCity": "London",
+    "rating": 4.5,
+    "body": "Really pleased with Sarah's work on our leather suite. She took great care with the expensive pieces and the results speak for themselves.",
+    "date": "2026-02-15"
+  },
+  {
+    "id": "review-003",
+    "cleanerId": "cleaner-002",
+    "customerName": "Oliver Chen",
+    "customerCity": "London",
+    "rating": 4.5,
+    "body": "James was very professional and thorough. Our fabric sofa looks brand new after years of wear and pet hair. Will definitely use again.",
+    "date": "2026-03-10"
+  },
+  {
+    "id": "review-004",
+    "cleanerId": "cleaner-002",
+    "customerName": "Sophie Richardson",
+    "customerCity": "London",
+    "rating": 5,
+    "body": "Fantastic end-of-tenancy clean that got our full deposit back. James worked efficiently and left everything spotless.",
+    "date": "2026-01-28"
+  },
+  {
+    "id": "review-005",
+    "cleanerId": "cleaner-003",
+    "customerName": "Rachel Foster",
+    "customerCity": "London",
+    "rating": 4.5,
+    "body": "Emma's attention to detail is impressive. She treated our vintage suede armchair with such care and restored it beautifully.",
+    "date": "2026-03-05"
+  },
+  {
+    "id": "review-006",
+    "cleanerId": "cleaner-004",
+    "customerName": "David Morrison",
+    "customerCity": "London",
+    "rating": 4,
+    "body": "Michael did excellent work on our hotel's velvet seating. Professional approach and quality results that impressed our management team.",
+    "date": "2026-02-20"
+  },
+  {
+    "id": "review-007",
+    "cleanerId": "cleaner-005",
+    "customerName": "Emma Thompson",
+    "customerCity": "Manchester",
+    "rating": 5,
+    "body": "Lisa was absolutely brilliant! Same-day service when I desperately needed help before guests arrived. The wine stain disappeared completely.",
+    "date": "2026-03-18"
+  },
+  {
+    "id": "review-008",
+    "cleanerId": "cleaner-005",
+    "customerName": "Michael Davies",
+    "customerCity": "Manchester",
+    "rating": 4.5,
+    "body": "Reliable and affordable service. Lisa knows what she's doing and delivers consistent results every time we book her.",
+    "date": "2026-02-12"
+  },
+  {
+    "id": "review-009",
+    "cleanerId": "cleaner-006",
+    "customerName": "Sarah Williams",
+    "customerCity": "Manchester",
+    "rating": 4,
+    "body": "David helped us get our rental deposit back with thorough end-of-tenancy cleaning. Honest pricing and no hidden fees.",
+    "date": "2026-03-22"
+  },
+  {
+    "id": "review-010",
+    "cleanerId": "cleaner-007",
+    "customerName": "Katherine Brooks",
+    "customerCity": "Birmingham",
+    "rating": 4.5,
+    "body": "Rachel's expertise with different fabric types is outstanding. She knew exactly how to handle our delicate suede without damaging it.",
+    "date": "2026-03-12"
+  },
+  {
+    "id": "review-011",
+    "cleanerId": "cleaner-007",
+    "customerName": "Thomas Green",
+    "customerCity": "Birmingham",
+    "rating": 5,
+    "body": "Professional-grade equipment and years of experience really show. Our leather sofa looks better than when we bought it.",
+    "date": "2026-01-30"
+  },
+  {
+    "id": "review-012",
+    "cleanerId": "cleaner-008",
+    "customerName": "Jennifer Clark",
+    "customerCity": "Birmingham",
+    "rating": 4,
+    "body": "Family business with personal touch. Steven was courteous and did good work at a fair price for our suburban area.",
+    "date": "2026-02-25"
+  },
+  {
+    "id": "review-013",
+    "cleanerId": "cleaner-009",
+    "customerName": "Andrew Taylor",
+    "customerCity": "Leeds",
+    "rating": 4.5,
+    "body": "Amanda treats furniture like it's her own family's. Incredible attention to detail and genuine care for the work she does.",
+    "date": "2026-03-08"
+  },
+  {
+    "id": "review-014",
+    "cleanerId": "cleaner-009",
+    "customerName": "Lisa Richards",
+    "customerCity": "Leeds",
+    "rating": 5,
+    "body": "Velvet cleaning specialist who knew exactly what products to use. The results exceeded our expectations completely.",
+    "date": "2026-02-18"
+  },
+  {
+    "id": "review-015",
+    "cleanerId": "cleaner-010",
+    "customerName": "Mark Thompson",
+    "customerCity": "Bristol",
+    "rating": 4.5,
+    "body": "Eco-friendly products that work brilliantly. Perfect for our household with young children and a cat. No harsh chemicals smell.",
+    "date": "2026-03-14"
+  },
+  {
+    "id": "review-016",
+    "cleanerId": "cleaner-011",
+    "customerName": "Moira Campbell",
+    "customerCity": "Edinburgh",
+    "rating": 5,
+    "body": "Fiona is Edinburgh's best for antique furniture. She restored our Victorian sofa with incredible skill and historical knowledge.",
+    "date": "2026-03-16"
+  },
+  {
+    "id": "review-017",
+    "cleanerId": "cleaner-011",
+    "customerName": "Robert MacLeod",
+    "customerCity": "Edinburgh",
+    "rating": 4.5,
+    "body": "Premier service for designer furniture. Fiona understands delicate fabrics and treats each piece with museum-quality care.",
+    "date": "2026-02-08"
+  },
+  {
+    "id": "review-018",
+    "cleanerId": "cleaner-012",
+    "customerName": "Hannah Murray",
+    "customerCity": "Glasgow",
+    "rating": 4,
+    "body": "Connor worked around our busy schedule with evening appointments. Flexible service and competitive Glasgow rates.",
+    "date": "2026-03-11"
+  },
+  {
+    "id": "review-019",
+    "cleanerId": "cleaner-003",
+    "customerName": "Caroline Mitchell",
+    "customerCity": "London",
+    "rating": 5,
+    "body": "Gentle cleaning methods that preserve fabric integrity completely. Emma clearly knows her craft and takes pride in perfect results.",
+    "date": "2026-01-22"
+  },
+  {
+    "id": "review-020",
+    "cleanerId": "cleaner-005",
+    "customerName": "Jonathan Wilson",
+    "customerCity": "Manchester",
+    "rating": 4.5,
+    "body": "Trust Lisa with your most valuable furniture. Five years of experience shows in every detail of her professional approach.",
+    "date": "2026-01-18"
+  },
+  {
+    "id": "review-021",
+    "cleanerId": "cleaner-001",
+    "customerName": "Victoria Barnes",
+    "customerCity": "London",
+    "rating": 4.5,
+    "body": "Luxury furniture specialist who understands expensive pieces. Sarah's eco-friendly approach gave us peace of mind with our investment furniture.",
+    "date": "2025-12-15"
+  },
+  {
+    "id": "review-022",
+    "cleanerId": "cleaner-004",
+    "customerName": "George Roberts",
+    "customerCity": "London",
+    "rating": 4.5,
+    "body": "West End expertise at its finest. Michael knows how to handle high-end hotel furniture and delivers consistent luxury results.",
+    "date": "2025-11-28"
+  },
+  {
+    "id": "review-023",
+    "cleanerId": "cleaner-007",
+    "customerName": "Patricia Green",
+    "customerCity": "Birmingham",
+    "rating": 4.5,
+    "body": "Rachel's professional equipment makes all the difference. Birmingham's best for fabric care expertise and superior cleaning results.",
+    "date": "2025-12-20"
+  },
+  {
+    "id": "review-024",
+    "cleanerId": "cleaner-006",
+    "customerName": "Steven Brown",
+    "customerCity": "Manchester",
+    "rating": 3.5,
+    "body": "Honest service and professional approach. David helped with our rental property and delivered exactly what was promised.",
+    "date": "2025-10-12"
+  },
+  {
+    "id": "review-025",
+    "cleanerId": "cleaner-008",
+    "customerName": "Margaret Clark",
+    "customerCity": "Birmingham",
+    "rating": 4,
+    "body": "Family-run business with personal customer service. Steven's honest pricing and reliable work ethic impressed our entire family.",
+    "date": "2025-11-05"
+  },
+  {
+    "id": "review-026",
+    "cleanerId": "cleaner-010",
+    "customerName": "Timothy Harris",
+    "customerCity": "Bristol",
+    "rating": 4.5,
+    "body": "Natural products that work incredibly well. Paul's eco-friendly approach perfectly suits Bristol families who care about environmental impact.",
+    "date": "2025-12-08"
+  },
+  {
+    "id": "review-027",
+    "cleanerId": "cleaner-009",
+    "customerName": "Rebecca Taylor",
+    "customerCity": "Leeds",
+    "rating": 4.5,
+    "body": "Commitment to excellence shows in every job. Amanda's attention to detail and professional approach makes her Leeds' most reliable cleaner.",
+    "date": "2025-10-30"
+  },
+  {
+    "id": "review-028",
+    "cleanerId": "cleaner-012",
+    "customerName": "Christopher Murray",
+    "customerCity": "Glasgow",
+    "rating": 4,
+    "body": "Weekend availability that fits perfectly with working families. Connor's flexible scheduling and competitive rates suit busy Glasgow lifestyles.",
+    "date": "2025-11-18"
+  },
+  {
+    "id": "review-029",
+    "cleanerId": "cleaner-002",
+    "customerName": "Amanda Thompson",
+    "customerCity": "London",
+    "rating": 4.5,
+    "body": "Deep cleaning techniques that remove impossible stains. James' six years of North London experience shows in his thorough professional approach.",
+    "date": "2024-12-22"
+  },
+  {
+    "id": "review-030",
+    "cleanerId": "cleaner-011",
+    "customerName": "Douglas MacLeod",
+    "customerCity": "Edinburgh",
+    "rating": 5,
+    "body": "Historic furniture restoration expertise unmatched in Edinburgh. Fiona treats antique pieces with the reverence and skill they truly deserve.",
+    "date": "2024-11-14"
+  }
+]

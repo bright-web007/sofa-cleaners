@@ -1,0 +1,226 @@
+'use client'
+
+import React from 'react'
+import Link from 'next/link'
+import { useState } from 'react'
+import { Button } from '@/components/ui/Button'
+import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
+import { JsonLd } from '@/components/JsonLd'
+import services from '@/lib/data/services.json'
+
+const serviceIcons = {
+  'fabric-sofa-cleaning': (
+    <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 21h16.5M4.5 3h15l-.75 18H5.25L4.5 3zM9 9h6m-6 3h6m-6 3h6" />
+    </svg>
+  ),
+  'leather-sofa-cleaning': (
+    <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+  ),
+  'stain-removal': (
+    <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>
+  ),
+  'velvet-sofa-cleaning': (
+    <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+    </svg>
+  ),
+  'end-of-tenancy': (
+    <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M3 14h18m-9-4v8m-7 0V4a2 2 0 012-2h14a2 2 0 012 2v16a2 2 0 01-2 2H5a2 2 0 01-2-2v-4z" />
+    </svg>
+  )
+}
+
+function ServiceCard({ service }: { service: typeof services[0] }) {
+  return (
+    <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-200 group">
+      {/* Icon */}
+      <div className="mb-4">
+        {serviceIcons[service.slug as keyof typeof serviceIcons] || serviceIcons['fabric-sofa-cleaning']}
+      </div>
+
+      {/* Name */}
+      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+        <Link href={`/services/${service.slug}`}>
+          {service.name}
+        </Link>
+      </h3>
+
+      {/* Description */}
+      <p className="text-gray-600 mb-4 line-clamp-3">
+        {service.description}
+      </p>
+
+      {/* Price Range */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="text-sm text-gray-500">
+          <span className="font-medium text-primary">{service.priceRange.split(' ')[0]}</span>
+          <span className="ml-1">per sofa</span>
+        </div>
+      </div>
+
+      {/* Learn More Link */}
+      <div className="pt-4 border-t border-gray-100">
+        <Link 
+          href={`/services/${service.slug}`}
+          className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors group"
+        >
+          Learn more
+          <svg className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+export default function ServicesPage() {
+  const [showModal, setShowModal] = useState(false)
+
+  // JSON-LD for Services page
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SofaCleaner.org",
+    "url": "https://sofacleaner.org/services",
+    "makesOffer": services.map(service => ({
+      "@type": "Offer",
+      "name": service.name,
+      "description": service.description,
+      "url": "https://sofacleaner.org/services/" + service.slug,
+      "priceRange": service.priceRange,
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    }))
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Our Sofa Cleaning Services
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Professional sofa cleaning services for every material and situation. 
+              Our certified cleaners use industry-leading techniques to restore your furniture to its best condition.
+            </p>
+            <Button
+              onClick={() => setShowModal(true)}
+              size="lg"
+              className="bg-primary hover:bg-primary/90"
+            >
+              Get Free Quote
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              How Our Service Works
+            </h2>
+            <p className="text-xl text-gray-600">
+              Simple, transparent process from quote to clean
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div className="text-center">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Get Quote</h3>
+              <p className="text-gray-600">
+                Tell us about your sofa and get instant pricing. No hidden fees or surprises.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Book Online</h3>
+              <p className="text-gray-600">
+                Choose your preferred date and time. We'll send confirmation and cleaner details.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Professional Clean</h3>
+              <p className="text-gray-600">
+                Our certified cleaner arrives with professional equipment and transforms your sofa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 lg:py-24 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Ready to Transform Your Sofa?
+          </h2>
+          <p className="text-xl text-primary-light mb-8">
+            Get your free quote in under 2 minutes. No commitment required.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={() => setShowModal(true)}
+              variant="secondary"
+              size="lg"
+              className="bg-white text-primary hover:bg-gray-100"
+            >
+              Get Free Quote
+            </Button>
+            <Button
+              variant="ghost"
+              size="lg"  
+              className="border-white text-white hover:bg-white/10"
+            >
+              Learn More
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Channel Select Modal */}
+      <ChannelSelectModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        message="Hi, I'd like to get a quote for sofa cleaning services. Please let me know your availability and pricing."
+      <JsonLd type="Organization" data={servicesSchema} />
+    </div>
+  )
+}
