@@ -88,8 +88,9 @@ export default function ServicePageClient({ service }: { service: typeof service
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => setShowModal(true)}
+                variant="secondary"
                 size="lg"
-                className="bg-primary hover:bg-primary/90"
+                className="bg-primary hover:bg-primary/90 hover:text-white transition-colors"
               >
                 Get Free Quote
               </Button>
@@ -144,7 +145,8 @@ export default function ServicePageClient({ service }: { service: typeof service
             <Button
               onClick={() => setShowModal(true)}
               size="lg"
-              className="bg-primary hover:bg-primary/90"
+              variant="secondary"
+              className="bg-primary hover:bg-primary/90 hover:text-white transition-colors"
             >
               Get Free Quote - {service.priceRange}
             </Button>
@@ -186,7 +188,7 @@ export default function ServicePageClient({ service }: { service: typeof service
                 {relatedServices.map((relatedService) => (
                   <div key={relatedService.id} className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      <Link 
+                      <Link
                         href={`/services/${relatedService.slug}`}
                         className="hover:text-primary transition-colors"
                       >
@@ -198,7 +200,7 @@ export default function ServicePageClient({ service }: { service: typeof service
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-primary">{relatedService.priceRange.split(' ')[0]}</span>
-                      <Link 
+                      <Link
                         href={`/services/${relatedService.slug}`}
                         className="text-primary font-medium hover:text-primary/80 transition-colors"
                       >
@@ -223,7 +225,7 @@ export default function ServicePageClient({ service }: { service: typeof service
               onClick={() => setShowModal(true)}
               variant="secondary"
               size="lg"
-              className="bg-white text-primary hover:bg-gray-100"
+              className="bg-primary text-black hover:bg-primary/90 hover:text-white transition-colors"
             >
               Get Free Quote
             </Button>

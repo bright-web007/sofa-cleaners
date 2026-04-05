@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
@@ -8,18 +10,18 @@ export default function NotFound() {
           Sorry, we couldn't find the page you're looking for. The cleaner or location you're looking for might have moved or doesn't exist.
         </p>
         <div className="space-x-4">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center px-6 py-3 bg-[#7B3FA0] text-white font-medium rounded-lg hover:bg-[#7B3FA0]/90 transition-colors"
           >
             Go Home
-          </a>
-          <a
-            href="/sofa-cleaners"
+          </Link>
+          <Link
+            href="/find-a-cleaner"
             className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors"
           >
             Browse Cleaners
-          </a>
+          </Link>
         </div>
       </div>
     </div>

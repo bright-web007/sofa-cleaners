@@ -25,13 +25,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, currentStep, className
                 <div
                   className={cn(
                     "w-10 h-10 rounded-full border-2 flex items-center justify-center text-sm font-medium transition-all duration-200",
-                    isCompleted && "bg-primary border-primary text-white",
+                    isCompleted && "bg-primary border-[purple] text-[black]",
                     isActive && "border-primary text-primary bg-white",
                     isUpcoming && "border-gray-300 text-gray-400 bg-white"
                   )}
                 >
                   {isCompleted ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5" fill="none" stroke="purple" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   ) : (
@@ -41,7 +41,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, currentStep, className
                 <span className={cn(
                   "text-xs font-medium mt-2 text-center max-w-20",
                   isActive && "text-primary",
-                  isCompleted && "text-gray-600",
+                  isCompleted && "text-[purple]",
                   isUpcoming && "text-gray-400"
                 )}>
                   {step}

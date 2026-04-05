@@ -43,7 +43,7 @@ export function CityGrid() {
 
         <div className="text-center mt-10">
           <Link
-            href="/sofa-cleaners"
+            href="/find-a-cleaner"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-primary bg-primary-light hover:bg-primary hover:text-white transition-colors"
           >
             View all cities

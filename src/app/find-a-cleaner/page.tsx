@@ -193,7 +193,7 @@ export default function FindACleanerPage() {
               {cityHighlights.map((item) => (
                 <Link
                   key={item}
-                  href={`/find-a-cleaner?city=${item.toLowerCase()}`}
+                  href={`/sofa-cleaners/${item.toLowerCase()}`}
                   className="rounded-[1.5rem] border border-slate-200 bg-white px-5 py-4 no-underline shadow-[0_12px_30px_rgba(15,23,42,0.04)] transition duration-200 hover:-translate-y-0.5 hover:border-slate-300"
                 >
                   <div className="flex items-center gap-3">

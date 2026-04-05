@@ -19,6 +19,8 @@ interface ButtonAsButtonProps extends BaseButtonProps, Omit<ButtonHTMLAttributes
 
 interface ButtonAsLinkProps extends BaseButtonProps {
   href: string
+  target?: string
+  rel?: string
   onClick?: never
   disabled?: never
   type?: never
@@ -67,11 +69,14 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     ) : null
 
     if (href) {
+      const { target, rel } = props as ButtonAsLinkProps
       return (
         <Link 
           href={href} 
           className={classes}
           ref={ref as never}
+          target={target}
+          rel={rel}
         >
           {LoadingIcon}
           {children}

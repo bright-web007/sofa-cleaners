@@ -209,7 +209,7 @@ export function BlogPostClient({ post }: Props) {
                 <Button 
                   onClick={() => setShowModal(true)}
                   size="lg"
-                  className="bg-primary hover:bg-primary/90"
+                  className="bg-primary text-primary/80 hover:text-[white] hover:bg-primary/90"
                 >
                   Get Free Quotes
                 </Button>
@@ -231,7 +231,7 @@ export function BlogPostClient({ post }: Props) {
                 <Button 
                   onClick={() => setShowModal(true)}
                   variant="ghost"
-                  className="border-primary text-primary hover:bg-primary hover:text-white"
+                  className="border-primary text-primary hover:bg-[purple] hover:text-white"
                 >
                   Get Professional Quote
                 </Button>

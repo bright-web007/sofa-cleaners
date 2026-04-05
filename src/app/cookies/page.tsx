@@ -1,3 +1,18 @@
+import type { Metadata } from 'next'
+import { SITE_NAME, SITE_URL } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy',
+  description: `Learn how SofaCleaner uses cookies to improve your experience. Manage your cookie preferences on this page.`,
+  alternates: { canonical: `${SITE_URL}/cookies` },
+  openGraph: {
+    title: `Cookie Policy | ${SITE_NAME}`,
+    description: 'Learn how SofaCleaner uses cookies and how to manage your preferences.',
+    url: `${SITE_URL}/cookies`,
+    type: 'website',
+  },
+}
+
 export default function CookiesPage() {
   return (
     <div className="min-h-screen bg-white py-16">

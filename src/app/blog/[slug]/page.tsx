@@ -2,11 +2,12 @@ import { BlogPostClient } from './BlogPostClient'
 import blogPosts from '@/lib/data/blog-posts.json'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 // Generate static paths at build time
@@ -18,11 +19,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const { slug } = await params
+  const post = blogPosts.find((p) => p.slug === slug)
   
   if (!post) {
     return {
-      title: 'Blog Post Not Found - SofaCleaner.org',
+      title: `Blog Post Not Found | ${SITE_NAME}`,
       description: 'The requested blog post could not be found.'
     }
   }
@@ -31,14 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const modifiedTime = new Date(post.updatedAt).toISOString()
 
   return {
-    title: `${post.title} - SofaCleaner.org`,
+    title: `${post.title} | ${SITE_NAME}`,
     description: post.excerpt,
     keywords: post.keyword,
     authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://sofacleaner.org/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       type: 'article',
       publishedTime,
       modifiedTime,
@@ -49,16 +51,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      creator: '@sofacleaner',
+      creator: `@${SITE_NAME.toLowerCase()}`,
     },
     alternates: {
-      canonical: `https://sofacleaner.org/blog/${post.slug}`,
+      canonical: `${SITE_URL}/blog/${post.slug}`,
     },
   }
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params
+  const post = blogPosts.find((p) => p.slug === slug)
 
   if (!post) {
     notFound()

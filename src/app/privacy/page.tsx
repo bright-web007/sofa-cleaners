@@ -1,3 +1,18 @@
+import type { Metadata } from 'next'
+import { SITE_NAME, SITE_URL } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: `SofaCleaner privacy policy. Understand how we collect, use and protect your personal data in compliance with UK GDPR.`,
+  alternates: { canonical: `${SITE_URL}/privacy` },
+  openGraph: {
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: 'SofaCleaner privacy policy — how we collect, use and protect your data under UK GDPR.',
+    url: `${SITE_URL}/privacy`,
+    type: 'website',
+  },
+}
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white py-16">
@@ -125,7 +140,7 @@ export default function PrivacyPage() {
 
           <p>To exercise these rights, contact privacy@sofacleaner.org with proof of identity.</p>
 
-          <h2 className="text-2xl font-semibent text-gray-900 mt-8 mb-4">10. Data Security</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">10. Data Security</h2>
           <p>We implement appropriate technical and organizational measures to protect your data:</p>
           <ul>
             <li>SSL encryption for data transmission</li>

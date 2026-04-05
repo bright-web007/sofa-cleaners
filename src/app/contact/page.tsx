@@ -30,9 +30,8 @@ export default function ContactPage() {
     resolver: zodResolver(contactSchema),
   })
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (_data: ContactFormData) => {
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log('Form submitted:', data)
     setIsSubmitted(true)
     reset()
     setTimeout(() => setIsSubmitted(false), 5000)
@@ -143,9 +142,8 @@ export default function ContactPage() {
             {contactMethods.map((method, index) => (
               <div
                 key={index}
-                className={`rounded-[1.75rem] border-2 p-8 text-center transition-all hover:shadow-md ${
-                  method.primary ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-[#fcfbf8] hover:border-slate-300'
-                }`}
+                className={`rounded-[1.75rem] border-2 p-8 text-center flex flex-col items-center justify-between transition-all hover:shadow-md ${method.primary ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-[#fcfbf8] hover:border-slate-300'
+                  }`}
               >
                 <div className="mb-4 text-4xl">{method.icon}</div>
                 <h3 className={`mb-2 text-xl font-semibold ${method.primary ? 'text-white' : 'text-slate-950'}`}>
@@ -154,9 +152,8 @@ export default function ContactPage() {
                 <p className={`mb-6 ${method.primary ? 'text-slate-300' : 'text-slate-600'}`}>{method.description}</p>
                 <Link
                   href={method.href}
-                  className={`inline-flex items-center justify-center rounded-full px-6 py-3 font-medium no-underline transition-colors ${
-                    method.primary ? 'bg-amber-300 text-slate-950 hover:bg-amber-200' : 'bg-slate-950 text-white hover:bg-slate-800'
-                  }`}
+                  className={`inline-flex items-center justify-center rounded-full px-6 py-3 font-medium no-underline transition-colors ${method.primary ? 'bg-amber-300 text-slate-950 hover:bg-amber-200' : 'bg-slate-950 text-white hover:bg-slate-800'
+                    }`}
                 >
                   {method.action}
                 </Link>
@@ -226,9 +223,8 @@ export default function ContactPage() {
                 type="text"
                 id="name"
                 {...register('name')}
-                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.name ? 'border-red-300' : 'border-gray-300'
-                }`}
+                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${errors.name ? 'border-red-300' : 'border-gray-300'
+                  }`}
                 placeholder="Your full name"
               />
               {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
@@ -242,9 +238,8 @@ export default function ContactPage() {
                 type="email"
                 id="email"
                 {...register('email')}
-                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.email ? 'border-red-300' : 'border-gray-300'
-                }`}
+                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${errors.email ? 'border-red-300' : 'border-gray-300'
+                  }`}
                 placeholder="your.email@example.com"
               />
               {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
@@ -258,9 +253,8 @@ export default function ContactPage() {
                 type="text"
                 id="subject"
                 {...register('subject')}
-                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.subject ? 'border-red-300' : 'border-gray-300'
-                }`}
+                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${errors.subject ? 'border-red-300' : 'border-gray-300'
+                  }`}
                 placeholder="What is your message about?"
               />
               {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>}
@@ -274,9 +268,8 @@ export default function ContactPage() {
                 id="message"
                 rows={6}
                 {...register('message')}
-                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.message ? 'border-red-300' : 'border-gray-300'
-                }`}
+                className={`w-full rounded border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary ${errors.message ? 'border-red-300' : 'border-gray-300'
+                  }`}
                 placeholder="Please provide details about your inquiry..."
               />
               {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}

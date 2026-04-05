@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { CleanerProfile } from '@/components/cleaner/CleanerProfile'
 import { ReviewCard } from '@/components/cleaner/ReviewCard'
+import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 // Import data - these would normally come from API/database
 import { Cleaner, Review } from '@/types'
@@ -9,9 +10,9 @@ import cleanersData from '@/lib/data/cleaners.json'
 import reviewsData from '@/lib/data/reviews.json'
 
 interface CleanerPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 async function getCleanerData(slug: string): Promise<{ cleaner: Cleaner | null; reviews: Review[] }> {
@@ -28,20 +29,25 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CleanerPageProps): Promise<Metadata> {
-  const { cleaner } = await getCleanerData(params.slug)
+  const { slug } = await params
+  const { cleaner } = await getCleanerData(slug)
   
   if (!cleaner) {
     return {
-      title: 'Cleaner Not Found | SofaCleaner.org'
+      title: `Cleaner Not Found | ${SITE_NAME}`
     }
   }
 
   return {
-    title: `${cleaner.name} — Sofa Cleaner in ${cleaner.city} | SofaCleaner.org`,
+    title: `${cleaner.name} — Sofa Cleaner in ${cleaner.city} | ${SITE_NAME}`,
     description: `${cleaner.name} - Professional sofa cleaner in ${cleaner.city}. ${cleaner.rating}/5 stars (${cleaner.reviewCount} reviews). From £${cleaner.hourlyRate}/hr. ${cleaner.dbsVerified ? 'DBS checked, ' : ''}${cleaner.insured ? 'Insured, ' : ''}Available ${cleaner.available ? 'now' : 'soon'}.`,
+    alternates: {
+      canonical: `${SITE_URL}/cleaner/${cleaner.slug}`,
+    },
     openGraph: {
       title: `${cleaner.name} — Sofa Cleaner in ${cleaner.city}`,
       description: `Professional sofa cleaning from £${cleaner.hourlyRate}/hr. ${cleaner.rating}/5 stars with ${cleaner.reviewCount} reviews.`,
+      url: `${SITE_URL}/cleaner/${cleaner.slug}`,
       type: 'profile',
       ...(cleaner.photo && { images: [{ url: cleaner.photo }] }),
     }
@@ -49,7 +55,8 @@ export async function generateMetadata({ params }: CleanerPageProps): Promise<Me
 }
 
 export default async function CleanerPage({ params }: CleanerPageProps) {
-  const { cleaner, reviews } = await getCleanerData(params.slug)
+  const { slug } = await params
+  const { cleaner, reviews } = await getCleanerData(slug)
 
   if (!cleaner) {
     notFound()
@@ -206,7 +213,7 @@ export default async function CleanerPage({ params }: CleanerPageProps) {
             "@type": "Person",
             "name": cleaner.name,
             "jobTitle": "Professional Sofa Cleaner",
-            "url": `https://sofacleaner.org/cleaner/${cleaner.slug}`,
+            "url": `${SITE_URL}/cleaner/${cleaner.slug}`,
             "image": cleaner.photo,
             "address": {
               "@type": "PostalAddress",

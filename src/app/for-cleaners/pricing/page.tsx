@@ -4,17 +4,19 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
+import { COMMISSION_RATE } from '@/lib/constants'
 
 export default function CleanersPricingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  
+
   // Calculator state
   const [hourlyRate, setHourlyRate] = useState(40)
   const [hoursPerWeek, setHoursPerWeek] = useState(25)
 
   // Calculate earnings
   const weeklyGross = hourlyRate * hoursPerWeek
-  const commission = weeklyGross * 0.18
+  const commission = weeklyGross * COMMISSION_RATE
+  const commissionPct = `${COMMISSION_RATE * 100}%`
   const weeklyTakeHome = weeklyGross - commission
   const monthlyTakeHome = weeklyTakeHome * 4.33
   const annualTakeHome = weeklyTakeHome * 52
@@ -22,19 +24,19 @@ export default function CleanersPricingPage() {
   const comparisonData = [
     {
       platform: "SofaCleaner",
-      commission: "18%",
+      commission: commissionPct,
       monthlyFee: "£0",
-      setupFee: "£0", 
+      setupFee: "£0",
       leadQuality: "4.8/5",
       paymentTerms: "Weekly",
       support: "Full Support"
     },
     {
       platform: "TaskRabbit",
-      commission: "15%", 
+      commission: "15%",
       monthlyFee: "£0",
       setupFee: "£25",
-      leadQuality: "3.9/5", 
+      leadQuality: "3.9/5",
       paymentTerms: "Weekly",
       support: "Limited"
     },
@@ -53,7 +55,7 @@ export default function CleanersPricingPage() {
       monthlyFee: "£0",
       setupFee: "£0",
       leadQuality: "Variable",
-      paymentTerms: "Direct", 
+      paymentTerms: "Direct",
       support: "None"
     }
   ]
@@ -89,15 +91,15 @@ export default function CleanersPricingPage() {
     },
     {
       question: "Are there really no monthly fees?",
-      answer: "Correct! Zero monthly fees, setup costs, or subscription charges. You only pay 18% commission on completed jobs."
+      answer: `Correct! Zero monthly fees, setup costs, or subscription charges. You only pay ${commissionPct} commission on completed jobs.`
     },
     {
-      question: "What if a customer doesn't pay?", 
+      question: "What if a customer doesn't pay?",
       answer: "We provide payment protection support and will help recover payments. Our vetting process reduces payment issues significantly."
     },
     {
       question: "How is commission calculated?",
-      answer: "Simple: 18% of the total amount you invoice the customer. If you earn £100 from a job, you pay £18 commission."
+      answer: `Simple: ${commissionPct} of the total amount you invoice the customer. If you earn £100 from a job, you pay £${COMMISSION_RATE * 100} commission.`
     },
     {
       question: "Can I increase my rates over time?",
@@ -122,7 +124,7 @@ export default function CleanersPricingPage() {
           </p>
           <div className="bg-white px-6 py-4 rounded-lg inline-block shadow-sm">
             <p className="text-lg font-medium text-primary">
-              💷 18% commission on completed jobs only
+              💷 {commissionPct} commission on completed jobs only
             </p>
           </div>
         </div>
@@ -134,10 +136,10 @@ export default function CleanersPricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Simple Commission Structure
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-3 mb-12">
             <div className="text-center bg-green-50 p-8 rounded-lg border border-green-200">
-              <div className="text-4xl font-bold text-green-600 mb-2">18%</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">{commissionPct}</div>
               <h3 className="font-semibold text-green-800 mb-2">Commission Rate</h3>
               <p className="text-green-700 text-sm">Only on completed, paid jobs. No upfront costs.</p>
             </div>
@@ -183,7 +185,7 @@ export default function CleanersPricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Earnings Calculator
           </h2>
-          
+
           <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
             <div className="grid gap-8 md:grid-cols-2">
               {/* Inputs */}
@@ -234,7 +236,7 @@ export default function CleanersPricingPage() {
                   <span className="font-semibold">£{weeklyGross}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
-                  <span className="text-gray-600">18% Commission:</span>
+                  <span className="text-gray-600">{commissionPct} Commission:</span>
                   <span className="font-semibold text-red-600">-£{commission.toFixed(0)}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b">
@@ -261,7 +263,7 @@ export default function CleanersPricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Real Cleaner Examples
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-3">
             {earningsExamples.map((example, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
@@ -298,7 +300,7 @@ export default function CleanersPricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Platform Comparison
           </h2>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-lg shadow-sm border border-gray-200">
               <thead>
@@ -339,7 +341,7 @@ export default function CleanersPricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Payment Terms
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-2">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">How You Get Paid</h3>
@@ -398,7 +400,7 @@ export default function CleanersPricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Earnings FAQ
           </h2>
-          
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
@@ -427,8 +429,8 @@ export default function CleanersPricingPage() {
                 Apply to Join
               </Button>
             </Link>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
             >
@@ -438,7 +440,7 @@ export default function CleanersPricingPage() {
         </div>
       </div>
 
-      <ChannelSelectModal 
+      <ChannelSelectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         message="I have questions about earnings and commission structure"

@@ -1,3 +1,18 @@
+import type { Metadata } from 'next'
+import { SITE_NAME, SITE_URL } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: `SofaCleaner terms of service. Read the full terms governing use of our platform by customers and cleaning professionals.`,
+  alternates: { canonical: `${SITE_URL}/terms` },
+  openGraph: {
+    title: `Terms of Service | ${SITE_NAME}`,
+    description: 'Read the SofaCleaner terms of service covering platform use by customers and cleaning professionals.',
+    url: `${SITE_URL}/terms`,
+    type: 'website',
+  },
+}
+
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white py-16">
@@ -146,7 +161,7 @@ export default function TermsPage() {
             <li>Cooperate with any resolution efforts</li>
           </ol>
 
-          <h2 className="text-2xl font-semibent text-gray-900 mt-8 mb-4">8. Liability Limitations</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">8. Liability Limitations</h2>
           
           <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">8.1 Platform Liability</h3>
           <p>
