@@ -3,18 +3,22 @@ import { ArrowRight, BookOpenText, Clock3, Sparkles, Tag } from 'lucide-react'
 import { JsonLd } from '@/components/JsonLd'
 import { BlogCard } from '@/components/sections/BlogCard'
 import blogPosts from '@/lib/data/blog-posts.json'
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from '@/lib/constants'
 
 export const metadata = {
-  title: 'Sofa Cleaning Guides | Expert Tips & Advice - SofaCleaner.org',
+  title: `Sofa Cleaning Guides | Expert Tips & Advice | ${SITE_NAME}`,
   description:
     'Expert sofa cleaning guides covering fabric care, leather maintenance, stain removal, and professional cleaning tips. Learn from industry professionals.',
   keywords:
     'sofa cleaning guide, fabric care, leather cleaning, stain removal, upholstery cleaning tips, sofa maintenance',
+  alternates: {
+    canonical: `${SITE_URL}/blog`,
+  },
   openGraph: {
     title: 'Sofa Cleaning Guides | Expert Tips & Advice',
     description:
       'Expert sofa cleaning guides covering fabric care, leather maintenance, stain removal, and professional cleaning tips.',
-    url: 'https://sofacleaner.org/blog',
+    url: `${SITE_URL}/blog`,
     type: 'website',
   },
 }
@@ -24,24 +28,26 @@ export default function BlogPage() {
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   )
 
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`
+
   const featuredPosts = sortedPosts.slice(0, 3)
 
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'SofaCleaner.org Blog',
+    name: `${SITE_NAME} Blog`,
     description: 'Expert sofa cleaning guides and tips',
-    url: 'https://sofacleaner.org/blog',
+    url: `${SITE_URL}/blog`,
     publisher: {
       '@type': 'Organization',
-      name: 'SofaCleaner.org',
-      url: 'https://sofacleaner.org',
+      name: SITE_NAME,
+      url: SITE_URL,
     },
     blogPost: sortedPosts.slice(0, 6).map((post) => ({
       '@type': 'BlogPosting',
       headline: post.title,
       description: post.excerpt,
-      url: `https://sofacleaner.org/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       datePublished: post.publishedAt,
       dateModified: post.updatedAt,
       author: {
@@ -50,8 +56,8 @@ export default function BlogPage() {
       },
       publisher: {
         '@type': 'Organization',
-        name: 'SofaCleaner.org',
-        url: 'https://sofacleaner.org',
+        name: SITE_NAME,
+        url: SITE_URL,
       },
     })),
   }
@@ -106,7 +112,7 @@ export default function BlogPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-700">Featured</p>
             <h2 className="mt-3 font-serif text-4xl text-slate-950 sm:text-5xl">Start with the highest-intent reads.</h2>
           </div>
-          <Link href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 no-underline hover:text-amber-700">
+          <Link href={whatsappHref} className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 no-underline hover:text-amber-700">
             Book a cleaner
             <ArrowRight className="h-4 w-4" />
           </Link>

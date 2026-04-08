@@ -1,11 +1,10 @@
-'use client'
-
 import Link from 'next/link'
 import { ArrowUpRight, Instagram, Linkedin, Sofa, Twitter } from 'lucide-react'
-import { PHONE_DISPLAY, SITE_NAME } from '@/lib/constants'
+import { PHONE_DISPLAY, SITE_NAME, WHATSAPP_NUMBER } from '@/lib/constants'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I need help with sofa cleaning.")}`
 
   const footerColumns = [
     {
@@ -55,7 +54,7 @@ export function Footer() {
               Message-first sofa cleaning for UK homeowners who want a trusted cleaner routed quickly, without extra onboarding.
             </p>
             <Link
-              href="/find-a-cleaner"
+              href={whatsappHref}
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 no-underline hover:text-amber-700"
             >
               Start on WhatsApp

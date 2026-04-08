@@ -10,7 +10,7 @@ export const PHONE_DISPLAY = "+44 7700 000 000"
 
 // Business Constants
 export const RESPONSE_TIME = "within 4 hours"
-export const COMMISSION_RATE = 0.15 // 15% commission
+export const COMMISSION_RATE = 0.18 // 18% commission
 export const MIN_HOURLY_RATE = 25
 export const MAX_HOURLY_RATE = 70
 

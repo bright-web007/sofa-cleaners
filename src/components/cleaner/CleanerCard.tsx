@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Cleaner } from '@/types'
 import { Button } from '@/components/ui/Button'
-import { ChannelSelectModal } from '@/components/ChannelSelectModal'
+import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
 
 interface CleanerCardProps {
   cleaner: Cleaner
@@ -18,13 +18,12 @@ export function CleanerCard({ cleaner }: CleanerCardProps) {
     return Array.from({ length: 5 }, (_, index) => (
       <svg
         key={index}
-        className={`w-4 h-4 ${
-          index < Math.floor(rating)
-            ? 'text-amber-400 fill-current'
-            : index < rating
+        className={`w-4 h-4 ${index < Math.floor(rating)
+          ? 'text-amber-400 fill-current'
+          : index < rating
             ? 'text-amber-400 fill-current opacity-50'
             : 'text-gray-300'
-        }`}
+          }`}
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -56,7 +55,7 @@ export function CleanerCard({ cleaner }: CleanerCardProps) {
               className="rounded-full object-cover"
             />
           </div>
-          
+
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between">
               <div>
@@ -65,7 +64,7 @@ export function CleanerCard({ cleaner }: CleanerCardProps) {
                 </h3>
                 <p className="text-sm text-gray-600">{cleaner.city}</p>
               </div>
-              
+
               <div className="flex items-center space-x-1 ml-2">
                 {renderStars(cleaner.rating)}
                 <span className="text-sm text-gray-600 ml-1">
@@ -73,7 +72,7 @@ export function CleanerCard({ cleaner }: CleanerCardProps) {
                 </span>
               </div>
             </div>
-            
+
             {/* Badges */}
             <div className="flex flex-wrap gap-1 mt-2">
               {cleaner.dbsVerified && (
@@ -94,38 +93,36 @@ export function CleanerCard({ cleaner }: CleanerCardProps) {
             </div>
           </div>
         </div>
-        
+
         <div className="flex items-center justify-between mb-4">
           <div className="text-lg font-bold text-gray-900">
             From £{cleaner.hourlyRate}/hr
           </div>
-          
+
           <div className="flex items-center">
-            <div className={`w-2 h-2 rounded-full mr-2 ${
-              cleaner.available ? 'bg-green-500' : 'bg-gray-400'
-            }`} />
-            <span className={`text-sm ${
-              cleaner.available ? 'text-green-700' : 'text-gray-500'
-            }`}>
+            <div className={`w-2 h-2 rounded-full mr-2 ${cleaner.available ? 'bg-green-500' : 'bg-gray-400'
+              }`} />
+            <span className={`text-sm ${cleaner.available ? 'text-green-700' : 'text-gray-500'
+              }`}>
               {cleaner.available ? 'Available' : 'Busy'}
             </span>
           </div>
         </div>
-        
+
         <div className="flex space-x-2">
           <Link
             href={`/cleaner/${cleaner.slug}`}
             className="flex-1"
           >
             <Button
-              variant="outline" 
+              variant="outline"
               className="w-full justify-center"
               size="sm"
             >
               View Profile
             </Button>
           </Link>
-          
+
           <Button
             onClick={handleQuoteClick}
             className="flex-1 justify-center bg-[#7B3FA0] hover:bg-[#7B3FA0]/90"

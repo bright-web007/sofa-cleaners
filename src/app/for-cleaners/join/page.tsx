@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -61,6 +60,13 @@ export default function CleanerSignupPage() {
   const [currentStep, setCurrentStep] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [profilePhotoPreview, setProfilePhotoPreview] = useState<string | null>(null)
+  const [isDragging, setIsDragging] = useState<{[key: string]: boolean}>({
+    dbsCertificate: false,
+    insuranceCertificate: false,
+    profilePhoto: false,
+  })
+
   const [selectedFiles, setSelectedFiles] = useState<{[key: string]: File | null}>({
     dbsCertificate: null,
     insuranceCertificate: null,
@@ -94,6 +100,51 @@ export default function CleanerSignupPage() {
     setSelectedFiles(prev => ({ ...prev, [fieldName]: file }))
     setValue(fieldName as any, file)
   }
+
+  const handleDragOver = (e: React.DragEvent, fieldName: string) => {
+    e.preventDefault()
+    setIsDragging(prev => ({ ...prev, [fieldName]: true }))
+  }
+
+  const handleDragLeave = (e: React.DragEvent, fieldName: string) => {
+    e.preventDefault()
+    setIsDragging(prev => ({ ...prev, [fieldName]: false }))
+  }
+
+  const handleDrop = (e: React.DragEvent, fieldName: string) => {
+    e.preventDefault()
+    setIsDragging(prev => ({ ...prev, [fieldName]: false }))
+    const file = e.dataTransfer.files?.[0]
+    if (file) handleFileUpload(fieldName, file)
+  }
+
+  useEffect(() => {
+    const file = selectedFiles.profilePhoto
+
+    if (!file) {
+      setProfilePhotoPreview(null)
+      return
+    }
+
+    if (!file.type.startsWith('image/')) {
+      setProfilePhotoPreview(null)
+      return
+    }
+
+    const fileReader = new FileReader()
+
+    fileReader.onload = () => {
+      if (typeof fileReader.result === 'string') {
+        setProfilePhotoPreview(fileReader.result)
+      }
+    }
+
+    fileReader.readAsDataURL(file)
+
+    return () => {
+      fileReader.onload = null
+    }
+  }, [selectedFiles.profilePhoto])
 
   const validateCurrentStep = async () => {
     let fields: string[] = []
@@ -333,7 +384,16 @@ export default function CleanerSignupPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       DBS Certificate
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
+                    <div
+                      className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
+                        isDragging.dbsCertificate
+                          ? 'border-primary bg-purple-50'
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                      onDragOver={(e) => handleDragOver(e, 'dbsCertificate')}
+                      onDragLeave={(e) => handleDragLeave(e, 'dbsCertificate')}
+                      onDrop={(e) => handleDrop(e, 'dbsCertificate')}
+                    >
                       {selectedFiles.dbsCertificate ? (
                         <div className="text-sm text-gray-600">
                           <Check className="h-5 w-5 text-green-500 mx-auto mb-2" />
@@ -369,7 +429,16 @@ export default function CleanerSignupPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Insurance Certificate
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
+                    <div
+                      className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
+                        isDragging.insuranceCertificate
+                          ? 'border-primary bg-purple-50'
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                      onDragOver={(e) => handleDragOver(e, 'insuranceCertificate')}
+                      onDragLeave={(e) => handleDragLeave(e, 'insuranceCertificate')}
+                      onDrop={(e) => handleDrop(e, 'insuranceCertificate')}
+                    >
                       {selectedFiles.insuranceCertificate ? (
                         <div className="text-sm text-gray-600">
                           <Check className="h-5 w-5 text-green-500 mx-auto mb-2" />
@@ -425,17 +494,25 @@ export default function CleanerSignupPage() {
                       Profile Photo
                     </label>
                     <div className="flex items-center space-x-4">
-                      {selectedFiles.profilePhoto && (
-                        <Image
-                          src={URL.createObjectURL(selectedFiles.profilePhoto)}
+                      {profilePhotoPreview && (
+                        <img
+                          src={profilePhotoPreview}
                           alt="Profile preview"
-                          width={80}
+                          width-={80}
                           height={80}
                           className="h-20 w-20 rounded-full object-cover"
-                          unoptimized
                         />
                       )}
-                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 flex-1 text-center hover:border-gray-400 transition-colors">
+                      <div
+                        className={`border-2 border-dashed rounded-lg p-4 flex-1 text-center transition-colors ${
+                          isDragging.profilePhoto
+                            ? 'border-primary bg-purple-50'
+                            : 'border-gray-300 hover:border-gray-400'
+                        }`}
+                        onDragOver={(e) => handleDragOver(e, 'profilePhoto')}
+                        onDragLeave={(e) => handleDragLeave(e, 'profilePhoto')}
+                        onDrop={(e) => handleDrop(e, 'profilePhoto')}
+                      >
                         {selectedFiles.profilePhoto ? (
                           <div className="text-sm text-gray-600">
                             <Check className="h-5 w-5 text-green-500 mx-auto mb-2" />

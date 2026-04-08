@@ -14,13 +14,13 @@ export default function PricingPage() {
       description: "Perfect for small living rooms and apartments"
     },
     {
-      type: "3-Seater Sofa", 
+      type: "3-Seater Sofa",
       priceRange: "£60–£95",
       description: "The most popular choice for family homes"
     },
     {
       type: "Corner Sofa",
-      priceRange: "£80–£130", 
+      priceRange: "£80–£130",
       description: "L-shaped and modular corner configurations"
     },
     {
@@ -42,7 +42,7 @@ export default function PricingPage() {
       icon: "🧵"
     },
     {
-      title: "Stain Severity", 
+      title: "Stain Severity",
       description: "Heavy staining or pet odors may need additional treatment and time",
       icon: "🔍"
     },
@@ -110,7 +110,7 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Typical Pricing by Sofa Type
           </h2>
-          
+
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {sofaTypes.map((sofa, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
@@ -131,7 +131,7 @@ export default function PricingPage() {
             <p className="text-gray-600 mb-6">
               Prices shown are typical ranges. Your actual quote may vary based on specific requirements.
             </p>
-            <Button 
+            <Button
               onClick={() => setIsModalOpen(true)}
               size="lg"
             >
@@ -147,7 +147,7 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             What Affects the Price?
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {priceFactors.map((factor, index) => (
               <div key={index} className="text-center">
@@ -170,7 +170,7 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Why Choose Professional Cleaning?
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-3 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -217,7 +217,7 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Pricing Questions
           </h2>
-          
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
@@ -240,7 +240,7 @@ export default function PricingPage() {
           <p className="text-xl text-primary-light mb-8">
             Message us once on WhatsApp and we will route you to an available cleaner quickly
           </p>
-          <Button 
+          <Button
             onClick={() => setIsModalOpen(true)}
             variant="secondary"
             size="lg"
@@ -250,7 +250,7 @@ export default function PricingPage() {
         </div>
       </div>
 
-      <ChannelSelectModal 
+      <ChannelSelectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         message="I'd like to get pricing quotes for sofa cleaning"

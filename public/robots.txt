@@ -10,7 +10,7 @@ Disallow: /_next/
 Disallow: /private/
 
 # Allow important pages
-Allow: /find-cleaner
+Allow: /find-a-cleaner
 Allow: /services
 Allow: /blog
 

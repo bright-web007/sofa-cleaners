@@ -4,16 +4,17 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const response = NextResponse.next()
 
-  // Security headers
-  response.headers.set('X-Content-Type-Options', 'nosniff')
-  response.headers.set('X-Frame-Options', 'DENY')
-  response.headers.set('X-XSS-Protection', '1; mode=block')
+  // Security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection also set in next.config.js)
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   
-  // CSP header for security
+  // CSP header — 'unsafe-eval' and 'unsafe-inline' only permitted in local dev
+  const isDev = process.env.NODE_ENV === 'development'
+  const scriptSrc = isDev
+    ? "'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com"
+    : "'self' https://www.googletagmanager.com https://www.google-analytics.com"
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.ingest.sentry.io; frame-src 'self' https://www.youtube.com;"
+    `default-src 'self'; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.ingest.sentry.io; frame-src 'self' https://www.youtube.com;`
   )
 
   // Redirect common typos and old paths
@@ -21,14 +22,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/find-a-cleaner', request.url), 301)
   }
 
-  if (pathname === '/cleaners') {
-    return NextResponse.redirect(new URL('/find-a-cleaner', request.url), 301)
-  }
-
   // Cleaner dashboard authentication check
   if (pathname.startsWith('/cleaner-dashboard')) {
     const cleanerSession = request.cookies.get('cleaner_session')
-    if (!cleanerSession || cleanerSession.value !== 'mock') {
+    const sessionSecret = process.env.CLEANER_SESSION_SECRET ?? 'mock'
+    if (!cleanerSession || cleanerSession.value !== sessionSecret) {
       return NextResponse.redirect(new URL('/cleaner/login', request.url), 302)
     }
   }

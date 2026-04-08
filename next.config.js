@@ -3,22 +3,26 @@ const { withSentryConfig } = require('@sentry/nextjs')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com', 'via.placeholder.com', 'i.pravatar.cc'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'via.placeholder.com' },
+      { protocol: 'https', hostname: 'i.pravatar.cc' },
+    ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
   },
 
   output: 'standalone',
-  
+
   // Enable compression
   compress: true,
-  
+
   // Optimize bundles
   experimental: {
     // optimizeCss: true, // Temporarily disabled due to missing critters module
     optimizePackageImports: ['lucide-react'],
   },
-  
+
   // Headers for security and performance
   async headers() {
     return [
@@ -71,33 +75,26 @@ const nextConfig = {
   // Redirects for SEO
   async redirects() {
     return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/cleaners',
-        destination: '/find-a-cleaner',
-        permanent: true,
-      },
-      {
-        source: '/sofa-cleaning',
-        destination: '/services/sofa-cleaning',
-        permanent: true,
-      }
+      // General navigation
+      { source: '/home', destination: '/', permanent: true },
+      { source: '/cleaners', destination: '/find-a-cleaner', permanent: true },
+      { source: '/book', destination: '/find-a-cleaner', permanent: true },
+      { source: '/booking', destination: '/find-a-cleaner', permanent: true },
+      { source: '/quote', destination: '/pricing', permanent: true },
+      { source: '/get-a-quote', destination: '/pricing', permanent: true },
+      { source: '/login', destination: '/cleaner/login', permanent: true },
+
+      // Service slug variations
+      { source: '/sofa-cleaning', destination: '/services/fabric-sofa-cleaning', permanent: true },
+      { source: '/leather-cleaning', destination: '/services/leather-sofa-cleaning', permanent: true },
+      { source: '/leather-sofa', destination: '/services/leather-sofa-cleaning', permanent: true },
+      { source: '/stain-removal', destination: '/services/stain-removal', permanent: true },
+      { source: '/velvet-cleaning', destination: '/services/velvet-sofa-cleaning', permanent: true },
+      { source: '/end-of-tenancy-cleaning', destination: '/services/end-of-tenancy', permanent: true },
+      { source: '/end-of-tenancy', destination: '/services/end-of-tenancy', permanent: true },
     ]
   },
 
-  // Rewrites for clean URLs
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-    ]
-  }
 }
 
 module.exports = withSentryConfig(nextConfig, {

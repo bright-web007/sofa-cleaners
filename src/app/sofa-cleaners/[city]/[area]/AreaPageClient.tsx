@@ -147,7 +147,7 @@ export function AreaPageClient({ city, area, cleaners }: Props) {
                   const areaCleanersCount = cleanersData.filter((cleaner: Cleaner) => {
                     const matchesCity = cleaner.city.toLowerCase() === city.name.toLowerCase()
                     const matchesArea = cleaner.areas.some(cleanerArea => 
-                      cleanerArea.toLowerCase().replace(' ', '-') === nearbyArea.name.toLowerCase().replace(' ', '-')
+                      cleanerArea.toLowerCase().replace(/ /g, '-') === nearbyArea.name.toLowerCase().replace(/ /g, '-')
                     )
                     return matchesCity && matchesArea
                   }).length

@@ -51,7 +51,7 @@ export function BlogPreview() {
                 </div>
                 
                 <Link
-                  href={`/guides/${post.slug}`}
+                  href={`/blog/${post.slug}`}
                   className="inline-block mt-4 text-primary font-medium hover:text-primary/80 transition-colors"
                 >
                   Read more →
@@ -63,7 +63,7 @@ export function BlogPreview() {
 
         <div className="text-center mt-10">
           <Link
-            href="/guides"
+            href="/blog"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-primary bg-primary-light hover:bg-primary hover:text-white transition-colors"
           >
             View all guides

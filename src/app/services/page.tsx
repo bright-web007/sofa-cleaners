@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Clock3, ShieldCheck, Sparkles, Star } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { JsonLd } from '@/components/JsonLd'
-import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
+import { SITE_NAME, SITE_URL, TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 import services from '@/lib/data/services.json'
 
 function ServiceCard({ service }: { service: (typeof services)[0] }) {
@@ -39,13 +39,13 @@ export default function ServicesPage() {
   const servicesSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'SofaCleaner.org',
-    url: 'https://sofacleaner.org/services',
+    name: SITE_NAME,
+    url: `${SITE_URL}/services`,
     makesOffer: services.map((service) => ({
       '@type': 'Offer',
       name: service.name,
       description: service.description,
-      url: `https://sofacleaner.org/services/${service.slug}`,
+      url: `${SITE_URL}/services/${service.slug}`,
       priceRange: service.priceRange,
       areaServed: {
         '@type': 'Country',
