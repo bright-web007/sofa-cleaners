@@ -19,6 +19,7 @@ import Maya from '@/assests/Maya.png'
 import Sophie from '@/assests/Sophie.png'
 import BookingBg from '@/assests/bookingBg.jpg'
 import { Button } from '@/components/ui/Button'
+import ImageComponent from '@/components/ui/ImageComponent'
 import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 
 const metrics = [
@@ -127,12 +128,17 @@ function SofaIllustration() {
       <div className="absolute inset-x-8 top-8 bottom-24 rounded-[2rem] border border-white/15 bg-white/5 backdrop-blur-xl" />
       <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f6d365]/20 blur-3xl" />
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={HeroIllustration.src}
-        alt="Illustration of a happy customer receiving sofa cleaning at home"
-        className="relative z-10 mx-auto mb-6 w-[120%] max-w-none -ml-[7.5%] object-cover"
-      />
+      <div className="relative z-10 mx-auto mb-6 w-[120%] max-w-none -ml-[7.5%]">
+        <ImageComponent
+          src={HeroIllustration}
+          alt="Illustration of a happy customer receiving sofa cleaning at home"
+          width={544}
+          height={544}
+          sizes="(max-width: 768px) 100vw, 40rem"
+          priority
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </div>
 
       <div className="reveal-float absolute left-4 top-10 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
         Same-day slots
@@ -331,7 +337,7 @@ export function HomePageDesign() {
 
       <section className="container section">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="w-full xl:w-[50%]">
+          <div className="w-full max-w-[640px]">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-700">Services</p>
             <h2 className="mt-3 font-serif text-4xl text-slate-950 sm:text-5xl">
               Cleaner matching for the jobs people actually need.
@@ -424,7 +430,7 @@ export function HomePageDesign() {
               </div>
               <p className="mt-5 text-lg text-slate-700">{review.quote}</p>
               <footer className="mt-6 border-t border-slate-100 pt-5">
-                <img src={review.image.src} alt={review.name} className="h-10 w-10 rounded-full object-cover" />
+                <ImageComponent src={review.image} alt={review.name} width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
                 <div className="font-semibold text-slate-950">{review.name}</div>
                 <div className="text-sm text-slate-500">{review.detail}</div>
               </footer>
@@ -457,16 +463,21 @@ export function HomePageDesign() {
       <section className="container py-16 sm:py-20">
         <div className="relative overflow-hidden rounded-[2.5rem] text-white shadow-[0_30px_100px_rgba(15,23,42,0.18)] sm:px-10 lg:px-14 lg:py-14 px-6 py-10">
           {/* Background image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${BookingBg.src})` }}
-          />
+          <div className="absolute inset-0">
+            <ImageComponent
+              src={BookingBg}
+              alt="Sofa cleaning background"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </div>
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#020617] to-[#0B217D00]" />
-          <div className="absolute right-0 top-0 h-60 w-60 rounded-full bg-amber-300/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, #020617, #0B217D00)' }} />
+          <div className="absolute right-0 top-0 z-[1] h-60 w-60 rounded-full bg-amber-300/20 blur-3xl" />
+          <div className="absolute bottom-0 left-0 z-[1] h-48 w-48 rounded-full bg-white/10 blur-3xl" />
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl xl:w-[48%]">
+            <div className="max-w-[614px]">
               <p className="text-sm leading-5 font-semibold uppercase tracking-[0.22em] text-amber-300">Ready to book</p>
               <h2 className="mt-3 font-serif text-4xl text-white sm:text-5xl">
                 Your freshest sofa is one conversation away.
@@ -478,21 +489,18 @@ export function HomePageDesign() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
+              <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                size="xl"
-                className="rounded-2xl py-[16px] whitespace-nowrap bg-amber-300 text-slate-950 hover:bg-amber-200"
+                className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
               >
                 Open WhatsApp
-              </Button>
-              <Button
+              </a>
+              <a
                 href={`https://t.me/${TELEGRAM_BOT}`}
-                variant="ghost"
-                size="xl"
-                className="rounded-2xl py-[16px] whitespace-nowrap border border-white/15 bg-white/[0.06] text-white hover:bg-white/[0.12] hover:text-white"
+                className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap border border-white/15 bg-white/[0.06] text-base font-semibold text-white hover:bg-white/[0.12] hover:text-white"
               >
                 Open Telegram
-              </Button>
+              </a>
             </div>
           </div>
         </div>
