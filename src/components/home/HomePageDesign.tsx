@@ -13,7 +13,12 @@ import {
   Sparkles,
   Star,
 } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import HeroIllustration from '@/assests/hero-illustration.png'
+import Jordan from '@/assests/Jordan.png'
+import Maya from '@/assests/Maya.png'
+import Sophie from '@/assests/Sophie.png'
+import BookingBg from '@/assests/bookingBg.jpg'
+import ImageComponent from '@/components/ui/ImageComponent'
 import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 
 const metrics = [
@@ -73,18 +78,21 @@ const coverage = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Bristol', 'Liv
 
 const reviews = [
   {
+    image: Maya,
     quote:
       'We booked over WhatsApp on a Sunday morning and had the sofa cleaned that afternoon. The whole thing felt effortless.',
     name: 'Maya T.',
     detail: 'Camden',
   },
   {
+    image: Jordan,
     quote:
       'The cleaner knew exactly how to handle a pale velvet sectional. It felt more premium and much less generic.',
     name: 'Jordan R.',
     detail: 'Leeds',
   },
   {
+    image: Sophie,
     quote:
       'Fast response, clear price, no back-and-forth forms. It felt more like a concierge than a listing website.',
     name: 'Sophie L.',
@@ -112,43 +120,29 @@ const faqs = [
 
 function SofaIllustration() {
   return (
-    <div className="relative mx-auto aspect-[4/3] w-full max-w-[34rem]">
+    <div className="relative mx-auto w-full max-w-[34rem] overflow-visible">
+      {/* Glow gradient */}
       <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top,#f6d365_0%,rgba(246,211,101,0.08)_28%,transparent_60%)]" />
-      <div className="absolute inset-8 rounded-[2rem] border border-white/15 bg-white/5 backdrop-blur-xl" />
+      {/* Glass panel behind the image */}
+      <div className="absolute inset-x-8 top-8 bottom-24 rounded-[2rem] border border-white/15 bg-white/5 backdrop-blur-xl" />
       <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f6d365]/20 blur-3xl" />
 
-      <svg
-        viewBox="0 0 460 340"
-        className="absolute inset-0 h-full w-full drop-shadow-[0_30px_80px_rgba(15,23,42,0.35)]"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse cx="228" cy="286" rx="126" ry="24" fill="#0f172a" fillOpacity="0.18" />
-        <path d="M121 122C121 98.804 139.804 80 163 80H297C320.196 80 339 98.804 339 122V189H121V122Z" fill="#F7F7F3" />
-        <path d="M97 179C97 160.222 112.222 145 131 145H329C347.778 145 363 160.222 363 179V234C363 252.778 347.778 268 329 268H131C112.222 268 97 252.778 97 234V179Z" fill="#FFFCF5" />
-        <rect x="142" y="154" width="86" height="65" rx="18" fill="#FFF8E7" />
-        <rect x="233" y="154" width="86" height="65" rx="18" fill="#FFF8E7" />
-        <path d="M108 126C108 104.461 125.461 87 147 87H169V189H108V126Z" fill="#F4F1E8" />
-        <path d="M352 126C352 104.461 334.539 87 313 87H291V189H352V126Z" fill="#F4F1E8" />
-        <rect x="128" y="268" width="12" height="28" rx="6" fill="#D6C6A5" />
-        <rect x="202" y="268" width="12" height="28" rx="6" fill="#D6C6A5" />
-        <rect x="246" y="268" width="12" height="28" rx="6" fill="#D6C6A5" />
-        <rect x="320" y="268" width="12" height="28" rx="6" fill="#D6C6A5" />
-        <path
-          d="M179 120C206.333 126.667 249.6 126.667 286.2 120"
-          stroke="#E9DFC7"
-          strokeWidth="4"
-          strokeLinecap="round"
+      <div className="relative z-10 mx-auto mb-6 w-[120%] max-w-none -ml-[7.5%]">
+        <ImageComponent
+          src={HeroIllustration}
+          alt="Illustration of a happy customer receiving sofa cleaning at home"
+          width={544}
+          height={544}
+          sizes="(max-width: 768px) 100vw, 40rem"
+          priority
+          style={{ width: '100%', height: 'auto' }}
         />
-        <circle cx="136" cy="63" r="5" fill="#F6D365" />
-        <circle cx="334" cy="67" r="4" fill="#F6D365" fillOpacity="0.7" />
-        <circle cx="374" cy="113" r="3" fill="white" fillOpacity="0.75" />
-      </svg>
+      </div>
 
       <div className="reveal-float absolute left-4 top-10 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
         Same-day slots
       </div>
-      <div className="reveal-float absolute bottom-8 right-3 rounded-2xl border border-white/20 bg-[#f8fafc] px-4 py-3 text-sm text-slate-900 shadow-2xl [animation-delay:220ms]">
+      <div className="reveal-float absolute bottom-14 right-3 rounded-2xl border border-white/20 bg-[#f8fafc] px-4 py-3 text-sm text-slate-900 shadow-2xl [animation-delay:220ms]">
         <div className="flex items-center gap-2 font-semibold">
           <Sparkles className="h-4 w-4 text-amber-500" />
           Cleaner matched
@@ -176,13 +170,13 @@ export function HomePageDesign() {
         <div className="container relative z-10 py-16 sm:py-20 lg:py-24">
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="space-y-10">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2 text-sm text-white/80 backdrop-blur">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2 text-sm xl:text-[14px] text-white/80 backdrop-blur">
                 <Sparkles className="h-4 w-4 text-amber-300" />
                 Modern sofa care, matched in minutes
               </div>
 
               <div className="max-w-3xl space-y-6">
-                <h1 className="font-serif text-5xl leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+                <h1 className="font-serif text-5xl leading-[72px] tracking-[-0.04em] text-white sm:text-6xl lg:text-[72px]">
                   A cleaner, faster way to book sofa cleaning.
                 </h1>
                 <p className="max-w-2xl text-lg text-slate-300 sm:text-xl">
@@ -204,13 +198,12 @@ export function HomePageDesign() {
                   />
                 </label>
                 <div className="flex flex-col gap-3 sm:justify-end">
-                  <Button
+                  <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                    size="xl"
-                    className="rounded-2xl bg-amber-300 px-8 py-4 text-slate-950 hover:bg-amber-200"
+                    className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
                   >
                     Open WhatsApp
-                  </Button>
+                  </a>
                 </div>
               </div>
 
@@ -251,8 +244,9 @@ export function HomePageDesign() {
                 ))}
               </div>
             </div>
-
-            <SofaIllustration />
+            <div className="relative xl:mt-18">
+              <SofaIllustration />
+            </div>
           </div>
         </div>
       </section>
@@ -293,9 +287,9 @@ export function HomePageDesign() {
               </div>
             ))}
             <div className="rounded-[1.75rem] bg-slate-950 p-6 text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
-              <p className="text-sm uppercase tracking-[0.2em] text-white/60">Customer promise</p>
-              <p className="mt-3 text-2xl font-semibold">AI-managed messaging from first enquiry to booked cleaner.</p>
-              <p className="mt-3 text-sm text-slate-300">
+              <p className="text-sm uppercase tracking-[0.2em] text-amber-300">Customer promise</p>
+              <p className="mt-3 text-2xl font-semibold text-white">AI-managed messaging from first enquiry to booked cleaner.</p>
+              <p className="mt-3 text-sm leading-5 text-slate-300">
                 Designed for urgent spills, regular maintenance and end-of-tenancy turnaround.
               </p>
             </div>
@@ -341,7 +335,7 @@ export function HomePageDesign() {
 
       <section className="container section">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+          <div className="w-full max-w-[640px]">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-700">Services</p>
             <h2 className="mt-3 font-serif text-4xl text-slate-950 sm:text-5xl">
               Cleaner matching for the jobs people actually need.
@@ -349,7 +343,7 @@ export function HomePageDesign() {
           </div>
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 no-underline hover:text-amber-700"
+            className="inline-flex whitespace-nowrap items-center gap-2 text-sm font-semibold text-slate-900 no-underline hover:text-amber-700"
           >
             Explore all services
             <ChevronRight className="h-4 w-4" />
@@ -425,7 +419,7 @@ export function HomePageDesign() {
           {reviews.map((review) => (
             <blockquote
               key={review.name}
-              className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
+              className="rounded-[2rem] flex flex-col justify-between border border-slate-200 bg-white p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
             >
               <div className="flex gap-1 text-amber-500">
                 {[0, 1, 2, 3, 4].map((star) => (
@@ -434,6 +428,7 @@ export function HomePageDesign() {
               </div>
               <p className="mt-5 text-lg text-slate-700">{review.quote}</p>
               <footer className="mt-6 border-t border-slate-100 pt-5">
+                <ImageComponent src={review.image} alt={review.name} width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
                 <div className="font-semibold text-slate-950">{review.name}</div>
                 <div className="text-sm text-slate-500">{review.detail}</div>
               </footer>
@@ -464,37 +459,46 @@ export function HomePageDesign() {
       </section>
 
       <section className="container py-16 sm:py-20">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 px-6 py-10 text-white shadow-[0_30px_100px_rgba(15,23,42,0.18)] sm:px-10 lg:px-14 lg:py-14">
-          <div className="absolute right-0 top-0 h-60 w-60 rounded-full bg-amber-300/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+        <div className="relative overflow-hidden rounded-[2.5rem] text-white shadow-[0_30px_100px_rgba(15,23,42,0.18)] sm:px-10 lg:px-14 lg:py-14 px-6 py-10">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <ImageComponent
+              src={BookingBg}
+              alt="Sofa cleaning background"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </div>
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to right, #020617, #0B217D00)' }} />
+          <div className="absolute right-0 top-0 z-[1] h-60 w-60 rounded-full bg-amber-300/20 blur-3xl" />
+          <div className="absolute bottom-0 left-0 z-[1] h-48 w-48 rounded-full bg-white/10 blur-3xl" />
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Ready to book</p>
+            <div className="max-w-[614px]">
+              <p className="text-sm leading-5 font-semibold uppercase tracking-[0.22em] text-amber-300">Ready to book</p>
               <h2 className="mt-3 font-serif text-4xl text-white sm:text-5xl">
                 Your freshest sofa is one conversation away.
               </h2>
-              <p className="mt-4 max-w-xl text-lg text-slate-300">
+              <p className="mt-4 max-w-xl text-lg font-normal leading-7 text-slate-300">
                 Start the chat, answer the prompts, send photos if needed, and let us handle the cleaner side of the
                 conversation for you.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
+              <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                size="xl"
-                className="rounded-2xl bg-amber-300 text-slate-950 hover:bg-amber-200"
+                className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
               >
                 Open WhatsApp
-              </Button>
-              <Button
+              </a>
+              <a
                 href={`https://t.me/${TELEGRAM_BOT}`}
-                variant="ghost"
-                size="xl"
-                className="rounded-2xl border border-white/15 bg-white/[0.06] text-white hover:bg-white/[0.12] hover:text-white"
+                className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap border border-white/15 bg-white/[0.06] text-base font-semibold text-white hover:bg-white/[0.12] hover:text-white"
               >
                 Open Telegram
-              </Button>
+              </a>
             </div>
           </div>
         </div>

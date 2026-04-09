@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Menu, Sofa, X } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import { WHATSAPP_NUMBER } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
@@ -39,12 +38,12 @@ export function Navbar() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <Link href="/" className="flex items-center gap-3 no-underline">
-              <div className="rounded-2xl bg-slate-950 p-2.5 text-white shadow-lg">
-                <Sofa className="h-5 w-5" />
+              <div className="rounded-2xl bg-slate-950 p-2.5 shadow-lg">
+                <Sofa className="h-[20px] w-[20px] text-[#FCD34D]" />
               </div>
               <div>
-                <span className="block text-lg font-semibold tracking-tight text-slate-950">SofaCleaner</span>
-                <span className="block text-xs uppercase tracking-[0.22em] text-slate-500">Upholstery booking</span>
+                <span className="block text-lg xl:text-[18px] font-semibold tracking-tight text-slate-950">SofaCleaner</span>
+                <span className="block text-xs xl:text-[12px] uppercase tracking-[0.22em] text-slate-500">Upholstery booking</span>
               </div>
             </Link>
 
@@ -53,7 +52,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-semibold tracking-wide text-slate-600 no-underline transition-colors hover:text-slate-950"
+                  className="text-sm xl:text-[14px] font-semibold tracking-wide text-slate-600 no-underline transition-colors hover:text-slate-950"
                 >
                   {item.label}
                 </Link>
@@ -63,14 +62,14 @@ export function Navbar() {
             <div className="hidden items-center gap-3 md:flex">
               <Link
                 href="/contact"
-                className="text-sm font-semibold text-slate-600 no-underline transition-colors hover:text-slate-950"
+                className="text-sm xl:text-[14px] font-semibold text-slate-600 no-underline transition-colors hover:text-slate-950"
               >
                 Talk to us
               </Link>
-              <Button href={whatsappHref} className="rounded-full bg-slate-950 px-5 text-white hover:bg-slate-800">
+              <a href={whatsappHref} className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-white text-sm xl:text-[14px] hover:bg-slate-800">
                 Open WhatsApp
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </a>
             </div>
 
             <button
@@ -101,12 +100,12 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="border-t border-slate-200 pt-4">
-                  <Button
+                  <a
                     href={whatsappHref}
-                    className="w-full rounded-full bg-slate-950 text-white hover:bg-slate-800"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-white text-sm xl:text-[14px] hover:bg-slate-800"
                   >
                     Open WhatsApp
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>
