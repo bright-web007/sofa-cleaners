@@ -200,7 +200,7 @@ export function HomePageDesign() {
                 <div className="flex flex-col gap-3 sm:justify-end">
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                    className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
+                    className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-400"
                   >
                     Open WhatsApp
                   </a>
