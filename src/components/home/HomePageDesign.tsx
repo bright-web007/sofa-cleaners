@@ -18,7 +18,6 @@ import Jordan from '@/assests/Jordan.png'
 import Maya from '@/assests/Maya.png'
 import Sophie from '@/assests/Sophie.png'
 import BookingBg from '@/assests/bookingBg.jpg'
-import { Button } from '@/components/ui/Button'
 import ImageComponent from '@/components/ui/ImageComponent'
 import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
 
@@ -199,13 +198,12 @@ export function HomePageDesign() {
                   />
                 </label>
                 <div className="flex flex-col gap-3 sm:justify-end">
-                  <Button
+                  <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                    size="xl"
-                    className="rounded-2xl bg-amber-300 px-8 py-4 text-slate-950 hover:bg-amber-200"
+                    className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
                   >
                     Open WhatsApp
-                  </Button>
+                  </a>
                 </div>
               </div>
 
