@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Menu, Sofa, X } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import { WHATSAPP_NUMBER } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
@@ -67,10 +66,10 @@ export function Navbar() {
               >
                 Talk to us
               </Link>
-              <Button href={whatsappHref} className="rounded-full bg-slate-950 px-5 text-white text-sm xl:text-[14px] hover:bg-slate-800">
+              <a href={whatsappHref} className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-white text-sm xl:text-[14px] hover:bg-slate-800">
                 Open WhatsApp
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </a>
             </div>
 
             <button
@@ -101,12 +100,12 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="border-t border-slate-200 pt-4">
-                  <Button
+                  <a
                     href={whatsappHref}
-                    className="w-full rounded-full bg-slate-950 text-white hover:bg-slate-800"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-white text-sm xl:text-[14px] hover:bg-slate-800"
                   >
                     Open WhatsApp
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>
