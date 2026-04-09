@@ -142,7 +142,7 @@ function SofaIllustration() {
       <div className="reveal-float absolute left-4 top-10 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
         Same-day slots
       </div>
-      <div className="reveal-float absolute bottom-14 right-3 rounded-2xl border border-white/20 bg-[#f8fafc] px-4 py-3 text-sm text-slate-900 shadow-2xl [animation-delay:220ms]">
+      <div className="reveal-float absolute bottom-14 right-3 rounded-xl border border-white/20 bg-[#f8fafc] px-4 py-3 text-sm text-slate-900 shadow-2xl [animation-delay:220ms]">
         <div className="flex items-center gap-2 font-semibold">
           <Sparkles className="h-4 w-4 text-amber-500" />
           Cleaner matched
@@ -194,13 +194,13 @@ export function HomePageDesign() {
                     value={postcode}
                     onChange={(event) => setPostcode(event.target.value)}
                     placeholder="SW1A 1AA"
-                    className="w-full rounded-2xl border border-white/10 bg-white px-5 py-4 text-base text-slate-900 outline-none transition focus:border-amber-300 focus:ring-4 focus:ring-amber-200/40"
+                    className="w-full rounded-xl border border-white/10 bg-white px-5 py-4 text-base text-slate-900 outline-none transition focus:border-amber-300 focus:ring-4 focus:ring-amber-200/40"
                   />
                 </label>
                 <div className="flex flex-col gap-3 sm:justify-end">
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                    className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
+                    className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
                   >
                     Open WhatsApp
                   </a>
@@ -489,13 +489,13 @@ export function HomePageDesign() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
+                className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:bg-amber-200"
               >
                 Open WhatsApp
               </a>
               <a
                 href={`https://t.me/${TELEGRAM_BOT}`}
-                className="inline-flex items-center justify-center rounded-2xl px-8 py-4 whitespace-nowrap border border-white/15 bg-white/[0.06] text-base font-semibold text-white hover:bg-white/[0.12] hover:text-white"
+                className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap border border-white/15 bg-white/[0.06] text-base font-semibold text-white hover:bg-white/[0.12] hover:text-white"
               >
                 Open Telegram
               </a>
