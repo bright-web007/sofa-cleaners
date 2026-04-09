@@ -14,6 +14,9 @@ import {
   Star,
 } from 'lucide-react'
 import HeroIllustration from '@/assests/hero-illustration.png'
+import Jordan from '@/assests/Jordan.png'
+import Maya from '@/assests/Maya.png'
+import Sophie from '@/assests/Sophie.png'
 import BookingBg from '@/assests/bookingBg.jpg'
 import { Button } from '@/components/ui/Button'
 import { TELEGRAM_BOT, WHATSAPP_NUMBER } from '@/lib/constants'
@@ -75,18 +78,21 @@ const coverage = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Bristol', 'Liv
 
 const reviews = [
   {
+    image: Maya,
     quote:
       'We booked over WhatsApp on a Sunday morning and had the sofa cleaned that afternoon. The whole thing felt effortless.',
     name: 'Maya T.',
     detail: 'Camden',
   },
   {
+    image: Jordan,
     quote:
       'The cleaner knew exactly how to handle a pale velvet sectional. It felt more premium and much less generic.',
     name: 'Jordan R.',
     detail: 'Leeds',
   },
   {
+    image: Sophie,
     quote:
       'Fast response, clear price, no back-and-forth forms. It felt more like a concierge than a listing website.',
     name: 'Sophie L.',
@@ -277,9 +283,9 @@ export function HomePageDesign() {
               </div>
             ))}
             <div className="rounded-[1.75rem] bg-slate-950 p-6 text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
-              <p className="text-[14px] uppercase tracking-[0.2em] text-[#FCD34D]">Customer promise</p>
-              <p className="mt-3 text-[24px] text-[#FFFFFF] font-semibold">AI-managed messaging from first enquiry to booked cleaner.</p>
-              <p className="mt-3 text-[14px] leading-[20px] text-[#CBD5E1]">
+              <p className="text-sm uppercase tracking-[0.2em] text-amber-300">Customer promise</p>
+              <p className="mt-3 text-2xl font-semibold text-white">AI-managed messaging from first enquiry to booked cleaner.</p>
+              <p className="mt-3 text-sm leading-5 text-slate-300">
                 Designed for urgent spills, regular maintenance and end-of-tenancy turnaround.
               </p>
             </div>
@@ -418,6 +424,7 @@ export function HomePageDesign() {
               </div>
               <p className="mt-5 text-lg text-slate-700">{review.quote}</p>
               <footer className="mt-6 border-t border-slate-100 pt-5">
+                <img src={review.image.src} alt={review.name} className="h-10 w-10 rounded-full object-cover" />
                 <div className="font-semibold text-slate-950">{review.name}</div>
                 <div className="text-sm text-slate-500">{review.detail}</div>
               </footer>
@@ -460,11 +467,11 @@ export function HomePageDesign() {
           <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl xl:w-[48%]">
-              <p className="text-[14px] leading-[20px] font-semibold uppercase tracking-[0.22em] text-amber-300">Ready to book</p>
+              <p className="text-sm leading-5 font-semibold uppercase tracking-[0.22em] text-amber-300">Ready to book</p>
               <h2 className="mt-3 font-serif text-4xl text-white sm:text-5xl">
                 Your freshest sofa is one conversation away.
               </h2>
-              <p className="mt-4 max-w-xl text-[18px] font-regular leadng-[28px] text-slate-300">
+              <p className="mt-4 max-w-xl text-lg font-normal leading-7 text-slate-300">
                 Start the chat, answer the prompts, send photos if needed, and let us handle the cleaner side of the
                 conversation for you.
               </p>
