@@ -308,7 +308,7 @@ export default function ForCleanersPage() {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-16">
+      <div className="py-16 mb-[100px]">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Frequently Asked Questions
@@ -326,7 +326,7 @@ export default function ForCleanersPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gray-900 text-white py-16 pb-[100px]">
+      <div className="bg-gray-900 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl text-white font-bold mb-4">
             Ready to Grow Your Cleaning Business?
