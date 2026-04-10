@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
 import { JsonLd } from '@/components/JsonLd'
-import { Accordion } from '@/components/ui/Accordion'
 import services from '@/lib/data/services.json'
 
 export default function ServicePageClient({ service }: { service: typeof services[0] }) {
@@ -63,13 +62,13 @@ export default function ServicePageClient({ service }: { service: typeof service
           <nav className="mb-8" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2 text-sm text-gray-500">
               <li>
-                <Link href="/" className="hover:text-primary transition-colors">
+                <Link href="/" className="!text-[#CC840A] hover:opacity-80 transition-colors">
                   Home
                 </Link>
               </li>
               <li>/</li>
               <li>
-                <Link href="/services" className="hover:text-primary transition-colors">
+                <Link href="/services" className="!text-[#CC840A] hover:opacity-80 transition-colors">
                   Services
                 </Link>
               </li>
@@ -78,19 +77,19 @@ export default function ServicePageClient({ service }: { service: typeof service
             </ol>
           </nav>
 
-          <div className="text-center">
+          <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               {service.headline}
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-8 ">
               {service.description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-col gap-4 items-center justify-center">
               <Button
                 onClick={() => setShowModal(true)}
                 variant="secondary"
-                size="lg"
-                className="bg-primary hover:bg-primary/90 hover:text-white transition-colors"
+                size="md"
+                className="!bg-amber-300 hover:!bg-amber-400 w-fit text-base font-semibold !text-slate-950 !border-transparent hover:!border-transparent transition-colors"
               >
                 Get Free Quote
               </Button>
@@ -127,7 +126,7 @@ export default function ServicePageClient({ service }: { service: typeof service
           {/* What to Expect */}
           <section>
             <h2 className="text-3xl font-bold text-gray-900 mb-8">What to Expect on the Day</h2>
-            <div className="bg-primary/5 rounded-lg p-8 border border-primary/20">
+            <div className="bg-[#7B3FA00D] rounded-lg p-8 border border-[#7B3FA033]">
               <div className="prose prose-lg text-gray-700">
                 <p className="whitespace-pre-line">{service.whatToExpect}</p>
               </div>
@@ -135,18 +134,18 @@ export default function ServicePageClient({ service }: { service: typeof service
           </section>
 
           {/* Mid-page CTA */}
-          <section className="bg-white rounded-lg p-8 border border-gray-200 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <section className="bg-[#020617] rounded-lg p-8 border border-gray-200 text-center">
+            <h3 className="text-3xl font-bold text-white mb-4">
               Ready to Book Your {service.name}?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-[#F5F0FA] text-md mb-6">
               Get your free quote in under 2 minutes. Professional service guaranteed.
             </p>
             <Button
               onClick={() => setShowModal(true)}
               size="lg"
               variant="secondary"
-              className="bg-primary hover:bg-primary/90 hover:text-white transition-colors"
+              className="bg-transparent hover:bg-transparent border border-[#FCD34D] hover:!border-[#FCD34D]/80 text-white transition-colors"
             >
               Get Free Quote - {service.priceRange}
             </Button>
@@ -157,7 +156,7 @@ export default function ServicePageClient({ service }: { service: typeof service
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Pricing Information</h2>
             <div className="bg-amber/10 rounded-lg p-8 border border-amber/30">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-amber/20 rounded-full p-3">
+                <div className="flex-shrink-0 bg-[#020617] rounded-full p-3">
                   <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
@@ -174,8 +173,16 @@ export default function ServicePageClient({ service }: { service: typeof service
           {service.faqs.length > 0 && (
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-              <div className="space-y-4">
-                <Accordion items={service.faqs} />
+              <div className="mx-auto grid max-w-4xl gap-4">
+                {service.faqs.map((faq) => (
+                  <div
+                    key={faq.question}
+                    className="rounded-[1.5rem] border border-slate-200 bg-white px-6 py-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)]"
+                  >
+                    <h3 className="text-xl font-semibold text-slate-950">{faq.question}</h3>
+                    <p className="mt-2 text-base text-sm text-slate-600">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
             </section>
           )}
@@ -214,18 +221,18 @@ export default function ServicePageClient({ service }: { service: typeof service
           )}
 
           {/* Final CTA */}
-          <section className="bg-primary rounded-lg p-8 text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">
+          <section className="bg-[#020617] rounded-lg p-8 text-center text-white">
+            <h2 className="text-3xl text-white font-bold mb-4">
               Book Your {service.name} Today
             </h2>
-            <p className="text-primary-light mb-6 text-lg">
+            <p className="text-[#F5F0FA] mb-6 text-md">
               Professional service, guaranteed results, transparent pricing
             </p>
             <Button
               onClick={() => setShowModal(true)}
               variant="secondary"
               size="lg"
-              className="bg-primary text-black hover:bg-primary/90 hover:text-white transition-colors"
+              className="!bg-amber-300 hover:!bg-amber-400 w-fit text-base font-semibold !text-slate-950 !border-transparent hover:!border-transparent transition-colors"
             >
               Get Free Quote
             </Button>
