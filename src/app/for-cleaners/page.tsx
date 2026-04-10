@@ -1,9 +1,13 @@
 'use client'
 
-import { useState } from 'react'  
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import CleanerBg from '@/assests/CleanerBg.png'
+import TestimonialImage from '@/assests/Testimonialprofile.png'
+import { PhoneCall, ClipboardList, RefreshCw, Banknote } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import ImageComponent from '@/components/ui/ImageComponent'
 import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
 
 export default function ForCleanersPage() {
@@ -13,22 +17,22 @@ export default function ForCleanersPage() {
     {
       title: "No Cold Calling",
       description: "Customers come to you pre-qualified and ready to book. No more door knocking or cold outreach.",
-      icon: "📞"
+      icon: PhoneCall
     },
     {
-      title: "Admin Handled for You", 
+      title: "Admin Handled for You",
       description: "We handle customer inquiries, quote collection, booking coordination, and follow-up communications.",
-      icon: "📋"
+      icon: ClipboardList
     },
     {
       title: "Regular Work",
       description: "Consistent flow of cleaning jobs matched to your location, availability, and services.",
-      icon: "🔄"
+      icon: RefreshCw
     },
     {
       title: "Great Earnings",
       description: "Keep 82% of every job. Average cleaners earn £50,000+ annually with consistent bookings.",
-      icon: "💷"
+      icon: Banknote
     }
   ]
 
@@ -40,7 +44,7 @@ export default function ForCleanersPage() {
     },
     {
       number: 2,
-      title: "Get Verified", 
+      title: "Get Verified",
       description: "We verify your credentials, insurance, and conduct a quality standards review"
     },
     {
@@ -99,16 +103,17 @@ export default function ForCleanersPage() {
       {/* Hero Section */}
       <div className="relative bg-gray-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1558618666-fdda9d8c6c0a?w=1200&h=800&fit=crop"
-            alt="Professional cleaner at work"
+          <ImageComponent
+            src={CleanerBg}
+            alt="Sofa cleaning background"
             fill
-            className="object-cover opacity-30"
+            sizes="100vw"
+            className="object-cover object-center"
           />
         </div>
-        
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">
+        <div className="absolute inset-0 z-[1] bg-[#111827B2]" />
+        <div className="relative max-w-4xl mx-auto px-4 text-center z-10">
+          <h1 className="text-5xl text-white font-bold mb-6">
             Get More Sofa Cleaning Jobs —<br />
             <span className="text-amber">Without the Admin</span>
           </h1>
@@ -116,20 +121,20 @@ export default function ForCleanersPage() {
             Join 200+ cleaners earning £50,000+ annually through our platform
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/for-cleaners/join">
-              <Button size="lg" variant="primary">
-                Apply to Join
-              </Button>
+            <Link href="/for-cleaners/join"
+              className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
+              Apply to Join
             </Link>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
+              className="bg-[#FFFFFF40] text-white"
             >
               Learn More
             </Button>
           </div>
-          
+
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-2xl font-bold text-amber">200+</div>
@@ -157,17 +162,17 @@ export default function ForCleanersPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Getting Started Is Simple
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-3">
             {process.map((step) => (
               <div key={step.number} className="text-center">
-                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                <div className="bg-primary text-[#000000] w-16 mb-3 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   {step.number}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-[#111827] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-[#4B5563] text-md">
                   {step.description}
                 </p>
               </div>
@@ -182,19 +187,24 @@ export default function ForCleanersPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Why Choose SofaCleaner?
           </h2>
-          
+
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon
+              return (
+                <div key={index} className="text-center bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <div className="inline-flex rounded-2xl bg-slate-950 p-3 text-white mb-4">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {benefit.description}
+                  </p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
@@ -217,7 +227,7 @@ export default function ForCleanersPage() {
                 No monthly fees • No setup costs • No minimum commitments
               </p>
             </div>
-            
+
             <div className="grid gap-6 md:grid-cols-2 text-left">
               <div className="bg-green-50 p-6 rounded-lg">
                 <h3 className="font-semibold text-green-800 mb-3">What's Included:</h3>
@@ -230,7 +240,7 @@ export default function ForCleanersPage() {
                   <li>• Marketing and platform promotion</li>
                 </ul>
               </div>
-              
+
               <div className="bg-blue-50 p-6 rounded-lg">
                 <h3 className="font-semibold text-blue-800 mb-3">You Handle:</h3>
                 <ul className="space-y-2 text-blue-700 text-sm">
@@ -253,7 +263,7 @@ export default function ForCleanersPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Requirements to Join
           </h2>
-          
+
           <div className="grid gap-4 md:grid-cols-2">
             {requirements.map((requirement, index) => (
               <div key={index} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
@@ -273,7 +283,7 @@ export default function ForCleanersPage() {
             <p className="text-gray-600 mb-6">
               Don't meet all requirements yet? We can help you get qualified.
             </p>
-            <Button 
+            <Button
               onClick={() => setIsModalOpen(true)}
               variant="ghost"
             >
@@ -284,10 +294,10 @@ export default function ForCleanersPage() {
       </div>
 
       {/* Testimonial */}
-      <div className="bg-primary text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="text-6xl mb-6">💬</div>
-          <blockquote className="text-2xl font-medium mb-6">
+      <div className="bg-primary text-white py-16 flex items-center justify-center">
+        <div className="max-w-4xl mx-auto px-4 text-center flex flex-col gap-6 items-center justify-center">
+          <ImageComponent src={TestimonialImage} alt="Sofa cleaning background" width={100} height={100} className="h-[100px] w-[100px] rounded-full object-cover" />
+          <blockquote className="text-2xl text-[#020617] font-medium mb-2">
             "I've doubled my monthly earnings since joining SofaCleaner. The steady flow of customers means I can plan my schedule and income months ahead."
           </blockquote>
           <div className="text-primary-light">
@@ -303,14 +313,12 @@ export default function ForCleanersPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Frequently Asked Questions
           </h2>
-          
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="rounded-[1.5rem] border border-slate-200 bg-white px-6 py-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
+                <h3 className="text-xl font-semibold text-slate-950">{faq.question}</h3>
+                <p className="mt-2 text-base text-slate-600">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -318,24 +326,24 @@ export default function ForCleanersPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gray-900 text-white py-16">
+      <div className="bg-gray-900 text-white py-16 pb-[100px]">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl text-white font-bold mb-4">
             Ready to Grow Your Cleaning Business?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-[#D1D5DB] mb-8">
             Join hundreds of successful cleaners earning more with less admin work
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/for-cleaners/join">
-              <Button size="lg" variant="primary">
-                Apply Now
-              </Button>
+            <Link href="/for-cleaners/join"
+              className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
+              Apply Now
             </Link>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
+              className="bg-[#FFFFFF40] text-white"
             >
               Ask Questions
             </Button>
@@ -343,7 +351,7 @@ export default function ForCleanersPage() {
         </div>
       </div>
 
-      <ChannelSelectModal 
+      <ChannelSelectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         message="I'm interested in joining as a cleaner and would like more information"
