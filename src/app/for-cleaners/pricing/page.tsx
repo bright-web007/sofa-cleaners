@@ -415,12 +415,12 @@ export default function CleanersPricingPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-primary text-white py-16">
+      <div className="bg-white text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Start Earning More Today
           </h2>
-          <p className="text-xl text-primary-light mb-8">
+          <p className="text-md text-[#4E4E4E] mb-8">
             Join our platform with no upfront costs and start earning from your first job
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -432,7 +432,7 @@ export default function CleanersPricingPage() {
               size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#FFFFFF40] text-white"
+              className="bg-[#F9FAFB] text-[#4B5563]"
             >
               Ask About Earnings
             </Button>

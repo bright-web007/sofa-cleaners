@@ -220,11 +220,9 @@ export default function PricingPage() {
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="rounded-[1.5rem] border border-slate-200 bg-white px-6 py-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
+                <h3 className="text-xl font-semibold text-slate-950">{faq.question}</h3>
+                <p className="mt-2 text-base text-slate-600">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -237,13 +235,14 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold mb-4">
             Get Your Free Quote Today
           </h2>
-          <p className="text-xl text-primary-light mb-8">
+          <p className="text-md text-[#4E4E4E] mb-8">
             Message us once on WhatsApp and we will route you to an available cleaner quickly
           </p>
           <Button
             onClick={() => setIsModalOpen(true)}
             variant="secondary"
             size="lg"
+            className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 border-transparent hover:!border-transparent hover:no-underline"
           >
             Start on WhatsApp
           </Button>
