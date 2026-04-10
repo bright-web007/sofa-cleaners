@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import CleanerBg from '@/assests/CleanerBg.png'
 import TestimonialImage from '@/assests/Testimonialprofile.png'
 import { PhoneCall, ClipboardList, RefreshCw, Banknote } from 'lucide-react'
@@ -122,14 +121,14 @@ export default function ForCleanersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/for-cleaners/join"
-              className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
+              className="inline-flex items-center justify-center rounded-md px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
               Apply to Join
             </Link>
             <Button
               size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#FFFFFF40] text-white"
+              className="bg-[#FFFFFF40] text-white rounded-md"
             >
               Learn More
             </Button>
@@ -336,14 +335,14 @@ export default function ForCleanersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/for-cleaners/join"
-              className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
+              className="inline-flex items-center justify-center rounded-md px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
               Apply Now
             </Link>
             <Button
               size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#FFFFFF40] text-white"
+              className="bg-[#FFFFFF40] text-white rounded-md"
             >
               Ask Questions
             </Button>
