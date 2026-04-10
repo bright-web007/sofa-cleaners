@@ -403,11 +403,9 @@ export default function CleanersPricingPage() {
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="rounded-[1.5rem] border border-slate-200 bg-white px-6 py-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)]">
+                <h3 className="text-xl font-semibold text-slate-950">{faq.question}</h3>
+                <p className="mt-2 text-base text-slate-600">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -415,24 +413,24 @@ export default function CleanersPricingPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-white text-white py-16">
+      <div className="bg-[#111827] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl text-white font-bold mb-4">
             Start Earning More Today
           </h2>
-          <p className="text-md text-[#4E4E4E] mb-8">
+          <p className="text-md text-[#D1D5DB] mb-8">
             Join our platform with no upfront costs and start earning from your first job
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/for-cleaners/join"
-              className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
+              className="inline-flex items-center justify-center rounded-md px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
               Apply to Join
             </Link>
             <Button
               size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#F9FAFB] text-[#4B5563]"
+              className="bg-[#FFFFFF40] text-white rounde-md"
             >
               Ask About Earnings
             </Button>

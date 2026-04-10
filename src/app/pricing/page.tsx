@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Square, Camera, MapPin, House } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { ChannelSelectModal } from '@/components/layout/ChannelSelectModal'
 
@@ -39,22 +40,22 @@ export default function PricingPage() {
     {
       title: "Fabric Type",
       description: "Delicate fabrics like silk or velvet may require specialized cleaning techniques",
-      icon: "🧵"
+      icon: Square
     },
     {
       title: "Stain Severity",
       description: "Heavy staining or pet odors may need additional treatment and time",
-      icon: "🔍"
+      icon: Camera
     },
     {
       title: "Location",
       description: "Prices may vary slightly between different cities and regions",
-      icon: "📍"
+      icon: MapPin
     },
     {
       title: "Accessibility",
       description: "Difficult access (upstairs, narrow doorways) may affect pricing",
-      icon: "🏠"
+      icon: House
     }
   ]
 
@@ -134,6 +135,7 @@ export default function PricingPage() {
             <Button
               onClick={() => setIsModalOpen(true)}
               size="lg"
+              className="inline-flex items-center justify-center rounded-md px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 border-transparent hover:!border-transparent hover:no-underline"
             >
               Get Your Exact Quote
             </Button>
@@ -149,17 +151,22 @@ export default function PricingPage() {
           </h2>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {priceFactors.map((factor, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{factor.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {factor.title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {factor.description}
-                </p>
-              </div>
-            ))}
+            {priceFactors.map((factor, index) => {
+              const Icon = factor.icon
+              return (
+                <div key={index} className="text-center">
+                  <div className="inline-flex rounded-md bg-slate-950 p-3 text-white mb-4">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {factor.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {factor.description}
+                  </p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
@@ -172,37 +179,37 @@ export default function PricingPage() {
           </h2>
 
           <div className="grid gap-8 md:grid-cols-3 mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white p-6 text-left rounded-md shadow-[0_12px_30px_rgba(15,23,42,0.04)] border border-gray-200">
+              <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Save Time</h3>
+              <h5 className="font-semibold text-gray-900 mb-2">Save Time</h5>
               <p className="text-gray-600 text-sm">
                 Professional job done in 1-2 hours vs. a full day of DIY attempts
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white p-6 text-left rounded-md shadow-[0_12px_30px_rgba(15,23,42,0.04)] border border-gray-200">
+              <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Better Results</h3>
+              <h5 className="font-semibold text-gray-900 mb-2">Better Results</h5>
               <p className="text-gray-600 text-sm">
                 Professional equipment and expertise for deeper, longer-lasting clean
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white p-6 text-left rounded-md shadow-[0_12px_30px_rgba(15,23,42,0.04)] border border-gray-200">
+              <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Safe & Insured</h3>
+              <h5 className="font-semibold text-gray-900 mb-2">Safe & Insured</h5>
               <p className="text-gray-600 text-sm">
                 No risk of damage with fully insured professional cleaners
               </p>
@@ -230,19 +237,19 @@ export default function PricingPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-primary text-white py-16">
+      <div className="bg-[#111827] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl text-white font-bold mb-4">
             Get Your Free Quote Today
           </h2>
-          <p className="text-md text-[#4E4E4E] mb-8">
+          <p className="text-md text-[#D1D5DB] mb-8">
             Message us once on WhatsApp and we will route you to an available cleaner quickly
           </p>
           <Button
             onClick={() => setIsModalOpen(true)}
             variant="secondary"
             size="lg"
-            className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 border-transparent hover:!border-transparent hover:no-underline"
+            className="inline-flex items-center justify-center rounded-md px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 border-transparent hover:!border-transparent hover:no-underline"
           >
             Start on WhatsApp
           </Button>
