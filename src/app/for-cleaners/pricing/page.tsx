@@ -424,15 +424,15 @@ export default function CleanersPricingPage() {
             Join our platform with no upfront costs and start earning from your first job
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/for-cleaners/join">
-              <Button size="lg" variant="secondary">
-                Apply to Join
-              </Button>
+            <Link href="/for-cleaners/join"
+              className="inline-flex items-center justify-center rounded-xl px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline">
+              Apply to Join
             </Link>
             <Button
               size="lg"
               variant="ghost"
               onClick={() => setIsModalOpen(true)}
+              className="bg-[#FFFFFF40] text-white"
             >
               Ask About Earnings
             </Button>
