@@ -30,9 +30,9 @@ function parseMarkdown(markdown: string): { html: string; headings: Heading[] } 
       .replace(/[^\w\s-]/g, '')
       .replace(/\s+/g, '-')
       .trim()
-    
+
     headings.push({ id, text, level })
-    
+
     return `<h${level} id="${id}" class="${level === 2 ? 'text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12 first:mt-0' : 'text-xl lg:text-2xl font-semibold text-gray-900 mb-4 mt-8'}">${text}</h${level}>`
   })
 
@@ -44,7 +44,7 @@ function parseMarkdown(markdown: string): { html: string; headings: Heading[] } 
 
   // Process bullet points
   html = html.replace(/^- (.+)$/gm, (_match, text) => `<li class="mb-2">${text}</li>`)
-  html = html.replace(/(<li.*?>.*?<\/li>[\s\S]*?)+/g, (match) => 
+  html = html.replace(/(<li.*?>.*?<\/li>[\s\S]*?)+/g, (match) =>
     `<ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">${match}</ul>`
   )
 
@@ -52,16 +52,16 @@ function parseMarkdown(markdown: string): { html: string; headings: Heading[] } 
   const lines = html.split('\n')
   const processedLines = lines.map(line => {
     const trimmed = line.trim()
-    if (!trimmed || 
-        trimmed.startsWith('<h') || 
-        trimmed.startsWith('<ul') || 
-        trimmed.startsWith('<li') ||
-        trimmed.startsWith('</ul>')) {
+    if (!trimmed ||
+      trimmed.startsWith('<h') ||
+      trimmed.startsWith('<ul') ||
+      trimmed.startsWith('<li') ||
+      trimmed.startsWith('</ul>')) {
       return line
     }
     return `<p class="mb-6 text-gray-700 leading-relaxed">${trimmed}</p>`
   })
-  
+
   html = processedLines.join('\n')
 
   return { html, headings }
@@ -114,13 +114,13 @@ export function BlogPostClient({ post }: Props) {
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <nav className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary transition-colors">
+            <Link href="/" className="text-[#CC840A] hover:text-amber-500 transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-primary transition-colors">
+            <Link href="/blog" className="text-[#CC840A] hover:text-amber-500 transition-colors">
               Blog
             </Link>
             <span>/</span>
@@ -131,20 +131,14 @@ export function BlogPostClient({ post }: Props) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="grid lg:grid-cols-12 gap-8">
-          {/* Table of Contents - Desktop Sidebar */}
-          <aside className="hidden lg:block lg:col-span-3">
-            <div className="sticky top-8">
-              <TableOfContents content={post.body} />
-            </div>
-          </aside>
-
+  
           {/* Main Content */}
           <article className="lg:col-span-9">
             {/* Article Header */}
             <header className="mb-8 lg:mb-12">
               <div className="mb-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span 
+                  <span
                     className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"
                   >
                     {post.keyword}
@@ -192,7 +186,7 @@ export function BlogPostClient({ post }: Props) {
             </div>
 
             {/* Article Content */}
-            <div 
+            <div
               className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:text-gray-700 prose-li:text-gray-700"
               dangerouslySetInnerHTML={{ __html: parsedContent.html }}
             />
@@ -206,10 +200,10 @@ export function BlogPostClient({ post }: Props) {
                 <p className="text-gray-600 mb-6">
                   Get instant quotes from verified sofa cleaning professionals in your area. No commitment required.
                 </p>
-                <Button 
+                <Button
                   onClick={() => setShowModal(true)}
                   size="lg"
-                  className="bg-primary text-primary/80 hover:text-[white] hover:bg-primary/90"
+                  className="inline-flex items-center justify-center rounded-md px-8 py-4 whitespace-nowrap bg-amber-300 text-base font-semibold text-slate-950 hover:!text-slate-950 hover:!bg-amber-400 hover:no-underline"
                 >
                   Get Free Quotes
                 </Button>
@@ -219,25 +213,31 @@ export function BlogPostClient({ post }: Props) {
             {/* Article Navigation */}
             <nav className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-col sm:flex-row justify-between">
-                <Link 
-                  href="/blog" 
-                  className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4 sm:mb-0"
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center text-primary hover:text-amber-300 transition-colors mb-4 sm:mb-0"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
                   Back to all guides
                 </Link>
-                <Button 
+                <Button
                   onClick={() => setShowModal(true)}
                   variant="ghost"
-                  className="border-primary text-primary hover:bg-[purple] hover:text-white"
+                  className="border-primary text-primary hover:bg-amber-300 hover:text-black"
                 >
                   Get Professional Quote
                 </Button>
               </div>
             </nav>
           </article>
+          {/* Table of Contents - Desktop Sidebar */}
+          <aside className="hidden lg:block lg:col-span-3 ">
+            <div className="sticky top-8">
+              <TableOfContents content={post.body} />
+            </div>
+          </aside>
         </div>
       </div>
 
