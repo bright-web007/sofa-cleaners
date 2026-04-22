@@ -6,18 +6,18 @@ import blogPosts from '@/lib/data/blog-posts.json'
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from '@/lib/constants'
 
 export const metadata = {
-  title: `Sofa Cleaning Guides | Expert Tips & Advice | ${SITE_NAME}`,
+  title: 'Sofa Cleaning Guides, Pricing & Care Tips',
   description:
-    'Expert sofa cleaning guides covering fabric care, leather maintenance, stain removal, and professional cleaning tips. Learn from industry professionals.',
+    'Explore sofa cleaning guides, UK sofa cleaning prices, stain removal tips, and upholstery care advice to keep your fabric and leather sofas fresh and clean.',
   keywords:
-    'sofa cleaning guide, fabric care, leather cleaning, stain removal, upholstery cleaning tips, sofa maintenance',
+    'sofa cleaning guide, fabric care, leather cleaning, stain removal, upholstery cleaning tips, sofa maintenance, sofa cleaning prices',
   alternates: {
     canonical: `${SITE_URL}/blog`,
   },
   openGraph: {
-    title: 'Sofa Cleaning Guides | Expert Tips & Advice',
+    title: `Sofa Cleaning Guides, Pricing & Care Tips | ${SITE_NAME}`,
     description:
-      'Expert sofa cleaning guides covering fabric care, leather maintenance, stain removal, and professional cleaning tips.',
+      'Explore sofa cleaning guides, UK sofa cleaning prices, stain removal tips, and upholstery care advice to keep your fabric and leather sofas fresh and clean.',
     url: `${SITE_URL}/blog`,
     type: 'website',
   },

@@ -3,11 +3,11 @@ import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Professional Sofa Cleaning Services',
-  description: 'Browse all SofaCleaner services — fabric, leather, velvet, stain removal, and end of tenancy sofa cleaning across the UK.',
+  description: 'Discover professional sofa cleaning services for fabric sofas, leather sofas, stain removal, deodorising, and deep upholstery cleaning from trusted local experts.',
   alternates: { canonical: `${SITE_URL}/services` },
   openGraph: {
     title: `Professional Sofa Cleaning Services | ${SITE_NAME}`,
-    description: 'Fabric, leather, velvet, stain removal, and end of tenancy sofa cleaning across the UK.',
+    description: 'Discover professional sofa cleaning services for fabric sofas, leather sofas, stain removal, deodorising, and deep upholstery cleaning from trusted local experts.',
     url: `${SITE_URL}/services`,
     type: 'website',
   },

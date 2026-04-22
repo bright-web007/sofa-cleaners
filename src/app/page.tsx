@@ -4,16 +4,16 @@ import { HomePageDesign } from '@/components/home/HomePageDesign'
 import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: SITE_NAME,
+  title: 'Sofa Cleaning Services Across the UK',
   description:
-    'Message SofaCleaner on WhatsApp or Telegram and let our AI guide the enquiry, collect photos, coordinate cleaners and escalate when needed.',
+    'Book trusted sofa cleaning services across the UK. Compare local sofa cleaners, get fast quotes, and hire experts for fabric, leather, and upholstery cleaning.',
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: SITE_NAME,
+    title: `Sofa Cleaning Services Across the UK | ${SITE_NAME}`,
     description:
-      'Message SofaCleaner on WhatsApp or Telegram and let our AI guide the enquiry, collect photos, coordinate cleaners and escalate when needed.',
+      'Book trusted sofa cleaning services across the UK. Compare local sofa cleaners, get fast quotes, and hire experts for fabric, leather, and upholstery cleaning.',
     url: SITE_URL,
     type: 'website',
   },

@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'How It Works',
-  description: 'See how SofaCleaner works in 3 simple steps — message on WhatsApp, confirm your booking, and a vetted cleaner arrives. No apps, no faff.',
+  title: 'How Sofa Cleaning Works | Book Trusted Sofa Cleaners',
+  description: 'Learn how sofa cleaning works with SofaCleaner. Compare trusted sofa cleaners, get fast quotes, and book professional upholstery cleaning in just a few simple steps.',
   alternates: { canonical: `${SITE_URL}/how-it-works` },
   openGraph: {
-    title: `How It Works | ${SITE_NAME}`,
-    description: 'Message on WhatsApp, confirm your booking, and a vetted cleaner arrives. No apps, no faff.',
+    title: `How Sofa Cleaning Works | Book Trusted Sofa Cleaners | ${SITE_NAME}`,
+    description: 'Learn how sofa cleaning works with SofaCleaner. Compare trusted sofa cleaners, get fast quotes, and book professional upholstery cleaning in just a few simple steps.',
     url: `${SITE_URL}/how-it-works`,
     type: 'website',
   },
