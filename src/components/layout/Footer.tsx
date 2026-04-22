@@ -70,7 +70,7 @@ export function Footer() {
               Start on WhatsApp
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <div className="flex gap-3 pt-2">
+            <div className="flex gap-3 pt-2 hidden">
               {[
                 { Icon: Twitter, label: 'Twitter' },
                 { Icon: InstagramIcon, label: 'Instagram' },

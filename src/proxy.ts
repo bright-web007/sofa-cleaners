@@ -11,7 +11,7 @@ export function proxy(request: NextRequest) {
   const isDev = process.env.NODE_ENV === 'development'
   const scriptSrc = isDev
     ? "'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com"
-    : "'self' https://www.googletagmanager.com https://www.google-analytics.com"
+    : "'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com"
   response.headers.set(
     'Content-Security-Policy',
     `default-src 'self'; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.ingest.sentry.io; frame-src 'self' https://www.youtube.com;`
